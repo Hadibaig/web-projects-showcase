@@ -70,3 +70,33 @@ and scale up — not the other way around.
 ## 🔧 What Is Included Per Theme
 
 Each theme project folder contains:
+
+---
+
+## 💡 Real World Context
+
+Every theme project here originated from
+a real client requirement — not a design
+exercise. Each one solved a specific
+problem that an existing theme could not
+handle without custom development.
+
+---
+
+## 🔗 Related Repositories
+
+- [WordPress Problem Solver Toolkit](https://github.com/Hadibaig/wordpress-problem-solver-toolkit)
+- [WordPress Plugins](./wordpress-plugins/)
+- [Web Projects Showcase — Main](https://github.com/Hadibaig/web-projects-showcase)
+
+---
+
+## 📜 License
+
+MIT — free to use and learn from
+with attribution to the original developer.
+
+---
+
+*⭐ Star this repo if you find it useful*
+*👤 Follow for new theme releases*
