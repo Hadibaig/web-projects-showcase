@@ -2,7 +2,7 @@
 
 A clean, responsive task management dashboard built with vanilla HTML, CSS, and JavaScript. Features full CRUD operations, color-coded task labels, due dates, and persistent localStorage — no frameworks, no dependencies.
 
----
+--
 
 ## 🔗 Live Demo
 
