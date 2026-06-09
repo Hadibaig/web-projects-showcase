@@ -1,6 +1,10 @@
-/* ===================================
-   LOGIN PROTECTION
-=================================== */
+/**
+ * Project:   Frontend Login Web Page
+ * Developer: Mirza Hadi
+ * Website:   hadi-mirza.com
+ * GitHub:    github.com/Hadibaig
+ */
+
 
 const loggedIn =
 sessionStorage.getItem("loggedIn") ||
