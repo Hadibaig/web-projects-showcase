@@ -1,7 +1,16 @@
-/* ============================================================
-   mobile.js — Mobile UI only (hamburger + task tabs)
-   SAFE: does not interfere with any script.js handlers
-   ============================================================ */
+/*
+════════════════════════════════════════
+  Project:    To-Do Dashboard App
+  Repo:       html-css-js/To-Do-Dashboard-App
+  Developer:  Mirza Hadi
+  Role:       Full-Stack WordPress Developer
+              & Technical Problem Solver
+  Website:    hadi-mirza.com
+  LinkedIn:   linkedin.com/in/hadibaig
+  GitHub:     github.com/Hadibaig
+  Newsletter: DCXherald — 4,000+ subscribers
+════════════════════════════════════════
+*/
 
 (function () {
 

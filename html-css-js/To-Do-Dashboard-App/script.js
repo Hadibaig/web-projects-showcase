@@ -1,3 +1,17 @@
+/*
+════════════════════════════════════════
+  Project:    To-Do Dashboard App
+  Repo:       html-css-js/To-Do-Dashboard-App
+  Developer:  Mirza Hadi
+  Role:       Full-Stack WordPress Developer
+              & Technical Problem Solver
+  Website:    hadi-mirza.com
+  LinkedIn:   linkedin.com/in/hadibaig
+  GitHub:     github.com/Hadibaig
+  Newsletter: DCXherald — 4,000+ subscribers
+════════════════════════════════════════
+*/
+
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 let selectedColor = "#fff9c4";
 let editIndex = null;
