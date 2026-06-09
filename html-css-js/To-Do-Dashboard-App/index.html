@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TaskFlow Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo">TaskFlow</div>
+
+  <nav class="nav">
+    <button class="nav-btn" id="homeBtn">Home</button>
+    <button class="nav-btn" id="aboutBtn">About</button>
+    <button class="nav-btn primary" id="addTaskBtn">+ Add Task</button>
+  </nav>
+</header>
+
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h3>Your Tasks (Max 7)</h3>
+    <div id="taskList" class="task-list"></div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- HOME -->
+    <div id="homeView" class="view">
+      <h2>Welcome to TaskFlow</h2>
+      <p>Modern 7-task dashboard with sticky note UI and local storage support.</p>
+
+      <div class="info-box">
+        <h3>Free Plan</h3>
+        <ul>
+          <li>✔ Max 7 tasks</li>
+          <li>✔ Edit / Delete tasks</li>
+          <li>✔ Local storage support</li>
+        </ul>
+
+        <h3>Premium (Coming Soon)</h3>
+        <ul>
+          <li>🚀 Unlimited tasks</li>
+          <li>🚀 Cloud sync</li>
+          <li>🚀 Advanced features</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div id="aboutView" class="view hidden">
+      <h2>About This App</h2>
+      <p>This is a frontend portfolio project built using HTML, CSS and JavaScript.</p>
+      <p>Premium feature is currently only a UI concept.</p>
+    </div>
+
+    <!-- DETAIL -->
+    <div id="taskDetail" class="task-detail hidden">
+      <h2 id="detailTitle"></h2>
+
+      <div class="meta">
+        <span id="detailDate"></span>
+        <span id="detailColor" class="color-tag"></span>
+      </div>
+
+      <p id="detailDesc"></p>
+
+      <div class="actions">
+        <button id="editTaskBtn">Edit</button>
+        <button id="deleteTaskBtn" class="danger">Delete</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- MODAL -->
+<div id="taskModal" class="modal hidden">
+  <div class="modal-content">
+
+    <h2>Task</h2>
+
+    <input type="text" id="taskTitle" placeholder="Task title"/>
+    <textarea id="taskDesc" placeholder="Task description"></textarea>
+    <input type="date" id="taskDate"/>
+
+    <div class="colors">
+      <div class="color yellow" data-color="#fff9c4"></div>
+      <div class="color green" data-color="#d1f7c4"></div>
+      <div class="color blue" data-color="#cce5ff"></div>
+      <div class="color pink" data-color="#ffd6e7"></div>
+      <div class="color purple" data-color="#e6d6ff"></div>
+    </div>
+
+    <button id="saveTaskBtn" class="primary">Save</button>
+    <button id="closeModalBtn">Cancel</button>
+
+  </div>
+</div>
+
+<!-- LIMIT MODAL -->
+<div id="limitModal" class="modal hidden">
+  <div class="modal-content">
+    <h2>🚀 Premium Feature Coming Soon</h2>
+    <p>You can only store 7 tasks in free version.</p>
+    <button id="closeLimitModal">OK</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
