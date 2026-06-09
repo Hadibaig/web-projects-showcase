@@ -2,80 +2,64 @@ let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 let selectedColor = "#fff9c4";
 let editIndex = null;
 
-// ELEMENTS
+const modal = document.getElementById("taskModal");
 const taskList = document.getElementById("taskList");
 
-const modal = document.getElementById("taskModal");
-const limitModal = document.getElementById("limitModal");
+const title = document.getElementById("taskTitle");
+const desc = document.getElementById("taskDesc");
+const date = document.getElementById("taskDate");
 
-const titleInput = document.getElementById("taskTitle");
-const descInput = document.getElementById("taskDesc");
-const dateInput = document.getElementById("taskDate");
-
-// DETAIL
-const detailTitle = document.getElementById("detailTitle");
-const detailDesc = document.getElementById("detailDesc");
-const detailDate = document.getElementById("detailDate");
-const detailColor = document.getElementById("detailColor");
-
-const homeView = document.getElementById("homeView");
-const aboutView = document.getElementById("aboutView");
-const detailView = document.getElementById("taskDetail");
-
-// NAV
+// ---------------- NAV ----------------
 document.getElementById("homeBtn").onclick = () => {
-  homeView.classList.remove("hidden");
-  aboutView.classList.add("hidden");
-  detailView.classList.add("hidden");
+  document.getElementById("homeView").classList.remove("hidden");
+  document.getElementById("aboutView").classList.add("hidden");
+  document.getElementById("taskDetail").classList.add("hidden");
 };
 
 document.getElementById("aboutBtn").onclick = () => {
-  aboutView.classList.remove("hidden");
-  homeView.classList.add("hidden");
-  detailView.classList.add("hidden");
+  document.getElementById("aboutView").classList.remove("hidden");
+  document.getElementById("homeView").classList.add("hidden");
+  document.getElementById("taskDetail").classList.add("hidden");
 };
 
-// OPEN ADD TASK
+// ---------------- ADD TASK ----------------
 document.getElementById("addTaskBtn").onclick = () => {
 
-  if (tasks.length >= 7) {
-    limitModal.classList.remove("hidden");
-    return;
-  }
-
   editIndex = null;
-  titleInput.value = "";
-  descInput.value = "";
-  dateInput.value = "";
+
+  title.value = "";
+  desc.value = "";
+  date.value = "";
+  selectedColor = "#fff9c4";
 
   modal.classList.remove("hidden");
 };
 
-// CLOSE MODAL
+// ---------------- CLOSE MODAL ----------------
 document.getElementById("closeModalBtn").onclick = () => {
   modal.classList.add("hidden");
 };
 
-document.getElementById("closeLimitModal").onclick = () => {
-  limitModal.classList.add("hidden");
-};
-
-// COLOR SELECT
-document.querySelectorAll(".color").forEach(c => {
+// ---------------- COLOR SELECT ----------------
+document.querySelectorAll(".c").forEach(c => {
   c.onclick = () => {
-    document.querySelectorAll(".color").forEach(x => x.classList.remove("selected"));
-    c.classList.add("selected");
-    selectedColor = c.dataset.color;
+    selectedColor = c.getAttribute("data");
   };
 });
 
-// SAVE TASK
+// ---------------- SAVE TASK (VALIDATION FIXED) ----------------
 document.getElementById("saveTaskBtn").onclick = () => {
 
+  // ✅ REQUIRED VALIDATION (IMPORTANT FIX)
+  if (!title.value.trim()) {
+    alert("Task title is required!");
+    return;
+  }
+
   const task = {
-    title: titleInput.value,
-    description: descInput.value,
-    date: dateInput.value,
+    title: title.value.trim(),
+    desc: desc.value.trim(),
+    date: date.value,
     color: selectedColor
   };
 
@@ -88,63 +72,58 @@ document.getElementById("saveTaskBtn").onclick = () => {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 
   modal.classList.add("hidden");
-  renderTasks();
+  render();
 };
 
-// RENDER SIDEBAR
-function renderTasks() {
+// ---------------- RENDER ----------------
+function render() {
   taskList.innerHTML = "";
 
-  tasks.slice(0, 7).forEach((task, index) => {
+  tasks.forEach((t, i) => {
 
     const div = document.createElement("div");
-    div.className = "task-card";
-    div.style.background = task.color;
+    div.className = "task";
+    div.style.background = t.color;
 
-    div.innerHTML = `
-      <strong>${task.title}</strong>
-      <small>${task.date}</small>
-    `;
+    div.innerHTML = `<b>${t.title}</b><br><small>${t.date}</small>`;
 
-    div.onclick = () => showTask(index);
+    div.onclick = () => show(i);
 
     taskList.appendChild(div);
   });
 }
 
-// SHOW TASK
-function showTask(index) {
+// ---------------- SHOW DETAIL ----------------
+function show(i) {
+  const t = tasks[i];
 
-  const task = tasks[index];
+  document.getElementById("taskDetail").classList.remove("hidden");
 
-  homeView.classList.add("hidden");
-  aboutView.classList.add("hidden");
-  detailView.classList.remove("hidden");
-
-  detailTitle.innerText = task.title;
-  detailDesc.innerText = task.description;
-  detailDate.innerText = task.date;
-  detailColor.style.background = task.color;
+  document.getElementById("detailTitle").innerText = t.title;
+  document.getElementById("detailDesc").innerText = t.desc;
+  document.getElementById("detailDate").innerText = t.date;
+  document.getElementById("detailColor").style.background = t.color;
 
   document.getElementById("deleteTaskBtn").onclick = () => {
-    tasks.splice(index, 1);
+    tasks.splice(i, 1);
     localStorage.setItem("tasks", JSON.stringify(tasks));
-    renderTasks();
-    detailView.classList.add("hidden");
-    homeView.classList.remove("hidden");
+    render();
+
+    document.getElementById("taskDetail").classList.add("hidden");
+    document.getElementById("homeView").classList.remove("hidden");
   };
 
   document.getElementById("editTaskBtn").onclick = () => {
-    editIndex = index;
 
-    titleInput.value = task.title;
-    descInput.value = task.description;
-    dateInput.value = task.date;
-    selectedColor = task.color;
+    editIndex = i;
+
+    title.value = t.title;
+    desc.value = t.desc;
+    date.value = t.date;
+    selectedColor = t.color;
 
     modal.classList.remove("hidden");
   };
 }
 
-// INIT
-renderTasks();
+render();

@@ -1,0 +1,101 @@
+/* ============================================================
+   RESPONSIVE — MOBILE (max-width: 767px)
+   ============================================================ */
+@media (max-width: 767px) {
+
+  /* Show hamburger, hide nav by default */
+  .hamburger {
+    display: flex;
+    align-items: center;
+  }
+
+  #mainNav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #1f2937;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 16px 16px;
+    border-bottom: 1px solid #374151;
+    gap: 6px;
+    z-index: 99;
+  }
+
+  #mainNav.nav-open {
+    display: flex;
+  }
+
+  #mainNav button {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+  }
+
+  /* Show mobile task bar */
+  .mobile-task-bar {
+    display: block;
+  }
+
+  /* Hide desktop sidebar */
+  .sidebar {
+    display: none;
+  }
+
+  /* Full-width main */
+  .container {
+    flex-direction: column;
+  }
+
+  .main {
+    padding: 18px 16px;
+  }
+
+  /* Welcome card full width */
+  .welcome-card {
+    max-width: 100%;
+    padding: 20px 16px;
+  }
+
+  /* Modal fits mobile */
+  .modalBox {
+    padding: 20px 16px;
+    border-radius: 14px;
+    max-width: 100%;
+  }
+
+  /* Detail actions stack */
+  .detail-actions {
+    flex-direction: column;
+  }
+
+  .btn-edit,
+  .danger {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Footer stacks */
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET (768px–1023px)
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .sidebar {
+    width: 210px;
+  }
+
+  .main {
+    padding: 20px;
+  }
+}
