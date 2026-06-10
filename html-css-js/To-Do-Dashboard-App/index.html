@@ -3,7 +3,7 @@
   Project:    To-Do Dashboard App
   Repo:       html-css-js/To-Do-Dashboard-App
   Developer:  Mirza Hadi
-  Role:       Full-Stack WordPress Developer
+  Role:       Full-Stack Developer
               & Technical Problem Solver
   Website:    hadi-mirza.com
   LinkedIn:   linkedin.com/in/hadibaig

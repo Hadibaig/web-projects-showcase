@@ -1,0 +1,128 @@
+<!--
+════════════════════════════════════════
+  Project:    Impact Gallery - Responsive Image Showcase
+  Developer:  Mirza Hadi
+  Role:        Full Stack Developer & Technical Problem Solver
+  Email:       mirzahadi@hotmail.com 
+  Website:     hadi-mirza.com
+  LinkedIn:    linkedin.com/in/hadibaig
+  GitHub:      github.com/Hadibaig
+  Newsletter:  DCXherald — 4,000+ subscribers
+════════════════════════════════════════
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impact Gallery</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="logo">ImpactGallery</div>
+
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <div class="hamburger">
+      ☰
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Impact Gallery</h1>
+      <p>A modern responsive image showcase built with HTML, CSS and JavaScript.</p>
+    </div>
+  </section>
+
+  <!-- ================= IMAGE GRID ================= -->
+  <section id="gallery" class="grid-section">
+    <h2>Image Gallery</h2>
+
+    <div class="image-grid">
+      <img src="https://picsum.photos/id/1015/600/400" alt="Gallery Image 1" />
+      <img src="https://picsum.photos/id/1016/600/400" alt="Gallery Image 2" />
+      <img src="https://picsum.photos/id/1018/600/400" alt="Gallery Image 3" />
+      <img src="https://picsum.photos/id/1020/600/400" alt="Gallery Image 4" />
+      <img src="https://picsum.photos/id/1024/600/400" alt="Gallery Image 5" />
+      <img src="https://picsum.photos/id/1025/600/400" alt="Gallery Image 6" />
+      <img src="https://picsum.photos/id/1035/600/400" alt="Gallery Image 7" />
+      <img src="https://picsum.photos/id/1039/600/400" alt="Gallery Image 8" />
+      <img src="https://picsum.photos/id/1041/600/400" alt="Gallery Image 9" />
+    </div>
+  </section>
+
+  <!-- ================= LIGHTBOX MODAL ================= -->
+<div class="lightbox" id="lightbox">
+  
+  <span class="close">&times;</span>
+
+  <!-- Prev Button -->
+  <button class="nav prev">&#10094;</button>
+
+  <!-- Image -->
+  <img class="lightbox-img" src="" alt="Preview Image" />
+
+  <!-- Next Button -->
+  <button class="nav next">&#10095;</button>
+
+</div>
+
+  <!-- ================= CAROUSEL SECTION (OPTION A) ================= -->
+  <section class="carousel-section">
+    <h2>Featured Showcase</h2>
+
+    <!-- Main Large Image -->
+    <div class="main-image">
+      <img id="featuredImage" src="https://picsum.photos/id/1015/800/500" alt="Featured" />
+    </div>
+
+    <!-- Thumbnail Row -->
+    <div class="thumbnail-row">
+      <img class="thumb active" src="https://picsum.photos/id/1015/200/120" alt="thumb1" />
+      <img class="thumb" src="https://picsum.photos/id/1016/200/120" alt="thumb2" />
+      <img class="thumb" src="https://picsum.photos/id/1018/200/120" alt="thumb3" />
+      <img class="thumb" src="https://picsum.photos/id/1020/200/120" alt="thumb4" />
+      <img class="thumb" src="https://picsum.photos/id/1024/200/120" alt="thumb5" />
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-content">
+      <h3>Mirza Hadi</h3>
+      <p>Full-Stack Developer & Technical Problem Solver</p>
+
+      <p>
+        Email: <a href="mailto:mirzahadi@hotmail.com">mirzahadi@hotmail.com</a>
+      </p>
+
+      <div class="footer-links">
+        <a href="https://hadi-mirza.com" target="_blank">Portfolio</a>
+        <a href="https://github.com/Hadibaig" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/hadibaig" target="_blank">LinkedIn</a>
+      </div>
+
+      <p class="copyright">
+        © 2026 Impact Gallery. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript file -->
+  <script src="script.js"></script>
+
+</body>
+</html>

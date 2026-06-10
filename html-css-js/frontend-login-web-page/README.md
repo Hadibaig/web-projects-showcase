@@ -120,7 +120,7 @@ Each project includes source code, screenshots, and documentation explaining the
 
 Mirza Hadi
 
-Full-Stack WordPress Developer & Technical Problem Solver
+Full-Stack Developer & Technical Problem Solver
 
 Portfolio:
 https://hadi-mirza.com
