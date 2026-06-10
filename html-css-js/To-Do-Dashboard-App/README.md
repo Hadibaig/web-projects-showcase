@@ -2,18 +2,7 @@
 
 A clean, responsive task management dashboard built with vanilla HTML, CSS, and JavaScript. Features full CRUD operations, color-coded task labels, due dates, and persistent localStorage — no frameworks, no dependencies.
 
----
-
-## 🔗 Live Demo
-
-> 🚀 [View Live on GitHub Pages](#) *(add your GitHub Pages link here)*
-
----
-
-## 📸 Preview
-
-![To-Do Dashboard App](./preview.png)
-*(Add a screenshot named `preview.png` to this folder)*
+--
 
 ---
 

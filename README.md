@@ -40,9 +40,9 @@ for international clients.
 
 | # | Project | Description | Live Demo |
 |---|---------|-------------|-----------|
-| 01 | [Project Name](./html-css-js/project-01-name/) | Short description | [View Demo](#) |
-| 02 | [Project Name](./html-css-js/project-02-name/) | Short description | [View Demo](#) |
-| 03 | [Project Name](./html-css-js/project-03-name/) | Short description | [View Demo](#) |
+| 01 | [frontend-login-web-page](./html-css-js/frontend-login-web-page/) | Simple Login Form | 
+| 02 | [To-Do-Dashboard-App](./html-css-js/To-Do-Dashboard-App/) | To Do Dashboard App | 
+| 03 | [Project Name](./html-css-js/project-03-name/) | Short description |  |
 
 *More projects added weekly*
 

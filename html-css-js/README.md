@@ -27,7 +27,8 @@ Full-Stack WordPress Developer & Technical Problem Solver
 
 | # | Project | Description | Live Demo |
 |---|---------|-------------|-----------|
-| 01 | [Coming Soon](./project-01/) | First project | - |
+| 01 | [Simple Login Form](./frontend-login-web-page/) | 1st project | - |
+| 01 | [To-Do-Dashboard-App](./To-Do-Dashboard-App/) | 2nd project | - |
 
 *Projects added weekly — follow to stay updated*
 
