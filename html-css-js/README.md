@@ -27,8 +27,10 @@ Full-Stack WordPress Developer & Technical Problem Solver
 
 | # | Project | Description | Live Demo |
 |---|---------|-------------|-----------|
-| 01 | [Simple Login Form](./frontend-login-web-page/) | 1st project | - |
-| 01 | [To-Do-Dashboard-App](./To-Do-Dashboard-App/) | 2nd project | - |
+| 01 | [frontend-login-web-page](./html-css-js/frontend-login-web-page/) | Simple Login Form | 
+| 02 | [To-Do-Dashboard-App](./html-css-js/To-Do-Dashboard-App/) | To Do Dashboard App | 
+| 03 | [Image-Gallery-Grid-Layout-App](./html-css-js/Image-Gallery-Grid-Layout-App/) | Short description | 
+| 04 | [TalentFlow-Recruitment-Wizard](./html-css-js/TalentFlow-Recruitment-Wizard/) | TalenFlow Recruitment Wizard |  |
 
 *Projects added weekly — follow to stay updated*
 
