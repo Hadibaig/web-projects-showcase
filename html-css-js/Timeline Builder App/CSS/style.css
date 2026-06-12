@@ -199,3 +199,58 @@ textarea{
         margin-left:0;
     }
 }
+
+/*V2*/
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #222;
+  --primary: #2563eb;
+}
+
+/* THEMES */
+body.light {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #222;
+  --primary: #2563eb;
+}
+
+body.dark {
+  --bg: #111827;
+  --card: #1f2937;
+  --text: #f9fafb;
+  --primary: #60a5fa;
+}
+
+body.corporate {
+  --bg: #eef2ff;
+  --card: #ffffff;
+  --text: #0f172a;
+  --primary: #1e3a8a;
+}
+
+body.startup {
+  --bg: #faf5ff;
+  --card: #ffffff;
+  --text: #111;
+  --primary: #9333ea;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* TIMELINE */
+.timeline-item {
+  background: var(--card);
+}
+
+.timeline-year {
+  color: var(--primary);
+}
+
+.timeline::before {
+  background: var(--primary);
+}
