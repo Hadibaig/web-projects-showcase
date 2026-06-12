@@ -107,3 +107,26 @@ function changeLayout(layout) {
 }
 
 renderTimeline();
+
+const savedData = loadFromStorage();
+
+let timelineEvents = savedData || [];
+
+const savedData = loadFromStorage();
+
+let timelineEvents = savedData || [];
+
+function persistData() {
+    saveToStorage(timelineEvents);
+}
+
+timelineEvents.push(newEvent);
+persistData();
+renderTimeline();
+
+timelineEvents = timelineEvents.filter(e => e.id !== id);
+persistData();
+renderTimeline();
+
+persistData();
+renderTimeline();
