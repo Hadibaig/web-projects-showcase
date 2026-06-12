@@ -1,132 +1,112 @@
-let timelineEvents = [
-  {
-    id: 1,
-    year: "2020",
-    title: "Company Founded",
-    description: "Started the journey."
-  },
-  {
-    id: 2,
-    year: "2021",
-    title: "First Product",
-    description: "Launched MVP."
-  }
-];
-
+let timelineEvents = [];
 let editingId = null;
 
 const timeline = document.getElementById("timeline");
 const form = document.getElementById("timelineForm");
-const submitBtn = document.getElementById("submitBtn");
 
-function renderTimeline() {
-  if (timelineEvents.length === 0) {
-    timeline.innerHTML = `<p class="empty-state">No events yet</p>`;
-    return;
-  }
+const searchInput = document.getElementById("search");
+const categoryFilter = document.getElementById("category");
 
-  timeline.innerHTML = "";
+function renderTimeline(data = timelineEvents) {
 
-  timelineEvents
+    if (data.length === 0) {
+        timeline.innerHTML = `<div class="empty-state">No events found</div>`;
+        return;
+    }
+
+    timeline.innerHTML = "";
+
+    data
     .sort((a, b) => a.year - b.year)
     .forEach(event => {
-      const div = document.createElement("div");
-      div.className = "timeline-item";
 
-      div.innerHTML = `
-        <div class="timeline-year">${event.year}</div>
-        <div class="timeline-title">${event.title}</div>
-        <div>${event.description}</div>
+        const div = document.createElement("div");
+        div.className = "timeline-item";
+        div.draggable = true;
 
-        <div class="actions">
-          <button class="edit-btn" onclick="editEvent(${event.id})">Edit</button>
-          <button class="delete-btn" onclick="deleteEvent(${event.id})">Delete</button>
-        </div>
-      `;
+        div.innerHTML = `
+            <div class="timeline-year">${event.year}</div>
+            <div class="timeline-title">${event.title}</div>
+            <div>${event.description}</div>
+            <small>${event.category}</small>
 
-      timeline.appendChild(div);
+            <div class="actions">
+                <button onclick="editEvent(${event.id})">Edit</button>
+                <button onclick="deleteEvent(${event.id})">Delete</button>
+            </div>
+        `;
+
+        /* DRAG START */
+        div.addEventListener("dragstart", (e) => {
+            e.dataTransfer.setData("text/plain", event.id);
+        });
+
+        timeline.appendChild(div);
     });
 }
 
-/* ADD / UPDATE */
+/* ADD EVENT */
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const year = document.getElementById("year").value;
-  const title = document.getElementById("title").value;
-  const description = document.getElementById("description").value;
+    const newEvent = {
+        id: Date.now(),
+        year: document.getElementById("year").value,
+        title: document.getElementById("title").value,
+        description: document.getElementById("description").value,
+        category: document.getElementById("categoryInput").value
+    };
 
-  if (editingId) {
-    const item = timelineEvents.find(e => e.id === editingId);
-    item.year = year;
-    item.title = title;
-    item.description = description;
+    timelineEvents.push(newEvent);
 
-    editingId = null;
-    submitBtn.textContent = "Add Event";
-
-  } else {
-    timelineEvents.push({
-      id: Date.now(),
-      year,
-      title,
-      description
-    });
-  }
-
-  form.reset();
-  renderTimeline();
+    form.reset();
+    renderTimeline();
 });
-
-/* EDIT */
-function editEvent(id) {
-  const item = timelineEvents.find(e => e.id === id);
-
-  document.getElementById("year").value = item.year;
-  document.getElementById("title").value = item.title;
-  document.getElementById("description").value = item.description;
-
-  editingId = id;
-  submitBtn.textContent = "Update Event";
-}
 
 /* DELETE */
 function deleteEvent(id) {
-  timelineEvents = timelineEvents.filter(e => e.id !== id);
-  renderTimeline();
+    timelineEvents = timelineEvents.filter(e => e.id !== id);
+    renderTimeline();
 }
 
-/* THEME */
-function changeTheme(theme) {
-  applyTheme(theme);
+/* EDIT */
+function editEvent(id) {
+    const item = timelineEvents.find(e => e.id === id);
+
+    document.getElementById("year").value = item.year;
+    document.getElementById("title").value = item.title;
+    document.getElementById("description").value = item.description;
+    document.getElementById("categoryInput").value = item.category;
+
+    editingId = id;
 }
 
-/* LAYOUT */
-function changeLayout(layout) {
-  applyLayout(layout);
+/* SEARCH */
+function handleSearch(value) {
+    const filtered = searchEvents(timelineEvents, value);
+    renderTimeline(filtered);
 }
 
-renderTimeline();
-
-const savedData = loadFromStorage();
-
-let timelineEvents = savedData || [];
-
-const savedData = loadFromStorage();
-
-let timelineEvents = savedData || [];
-
-function persistData() {
-    saveToStorage(timelineEvents);
+/* CATEGORY FILTER */
+function handleCategory(value) {
+    const filtered = filterByCategory(timelineEvents, value);
+    renderTimeline(filtered);
 }
 
-timelineEvents.push(newEvent);
-persistData();
-renderTimeline();
+/* DRAG DROP SORT (simple swap logic) */
+timeline.addEventListener("dragover", (e) => {
+    e.preventDefault();
+});
 
-timelineEvents = timelineEvents.filter(e => e.id !== id);
-persistData();
-renderTimeline();
+timeline.addEventListener("drop", (e) => {
+    const draggedId = +e.dataTransfer.getData("text/plain");
 
-persistData();
+    const target = timelineEvents.find(e => e.id == draggedId);
+    timelineEvents = timelineEvents.filter(e => e.id !== draggedId);
+
+    timelineEvents.push(target);
+
+    renderTimeline();
+});
+
 renderTimeline();

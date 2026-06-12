@@ -22,7 +22,23 @@
         <h2>Timeline Event</h2>
 
         <form id="timelineForm">
-
+            <select id="category" onchange="handleCategory(this.value)">
+    <option value="all">All</option>
+    <option value="Funding">Funding</option>
+    <option value="Growth">Growth</option>
+    <option value="Awards">Awards</option>
+</select>
+            <input 
+    type="text"
+    id="search"
+    placeholder="Search events..."
+    oninput="handleSearch(this.value)"
+>
+<input 
+    type="text"
+    id="categoryInput"
+    placeholder="Category (Funding, Growth, Awards)"
+>
             <div class="form-group">
                 <label>Year</label>
                 <input type="text" id="year" required>
