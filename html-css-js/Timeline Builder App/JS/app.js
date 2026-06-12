@@ -1,34 +1,45 @@
-let timelineEvents = [];
-let editingId = null;
+let timelineEvents = loadData();
+let historyStack = [];
 
 const timeline = document.getElementById("timeline");
 const form = document.getElementById("timelineForm");
 
-const searchInput = document.getElementById("search");
-const categoryFilter = document.getElementById("category");
+function pushHistory() {
+    historyStack.push(JSON.stringify(timelineEvents));
+}
 
+/* SAVE */
+function persist() {
+    saveData(timelineEvents);
+}
+
+/* RENDER */
 function renderTimeline(data = timelineEvents) {
-
-    if (data.length === 0) {
-        timeline.innerHTML = `<div class="empty-state">No events found</div>`;
-        return;
-    }
 
     timeline.innerHTML = "";
 
-    data
-    .sort((a, b) => a.year - b.year)
-    .forEach(event => {
+    if (data.length === 0) {
+        timeline.innerHTML = `
+            <div class="empty-state">
+                <h3>No Events</h3>
+                <p>Add your first timeline event</p>
+            </div>
+        `;
+        return;
+    }
 
+    data.sort((a, b) => a.year - b.year);
+
+    data.forEach(event => {
         const div = document.createElement("div");
         div.className = "timeline-item";
-        div.draggable = true;
 
         div.innerHTML = `
             <div class="timeline-year">${event.year}</div>
             <div class="timeline-title">${event.title}</div>
             <div>${event.description}</div>
-            <small>${event.category}</small>
+
+            <small>${event.category || "General"}</small>
 
             <div class="actions">
                 <button onclick="editEvent(${event.id})">Edit</button>
@@ -36,18 +47,15 @@ function renderTimeline(data = timelineEvents) {
             </div>
         `;
 
-        /* DRAG START */
-        div.addEventListener("dragstart", (e) => {
-            e.dataTransfer.setData("text/plain", event.id);
-        });
-
         timeline.appendChild(div);
     });
 }
 
-/* ADD EVENT */
+/* ADD + UPDATE */
 form.addEventListener("submit", (e) => {
     e.preventDefault();
+
+    pushHistory();
 
     const newEvent = {
         id: Date.now(),
@@ -59,14 +67,23 @@ form.addEventListener("submit", (e) => {
 
     timelineEvents.push(newEvent);
 
-    form.reset();
+    persist();
     renderTimeline();
+    form.reset();
+
+    showStatus("Event Saved ✔");
 });
 
 /* DELETE */
 function deleteEvent(id) {
+    pushHistory();
+
     timelineEvents = timelineEvents.filter(e => e.id !== id);
+
+    persist();
     renderTimeline();
+
+    showStatus("Deleted ✔");
 }
 
 /* EDIT */
@@ -77,36 +94,54 @@ function editEvent(id) {
     document.getElementById("title").value = item.title;
     document.getElementById("description").value = item.description;
     document.getElementById("categoryInput").value = item.category;
-
-    editingId = id;
 }
 
-/* SEARCH */
-function handleSearch(value) {
-    const filtered = searchEvents(timelineEvents, value);
-    renderTimeline(filtered);
-}
+/* UNDO */
+function undo() {
+    if (historyStack.length === 0) return;
 
-/* CATEGORY FILTER */
-function handleCategory(value) {
-    const filtered = filterByCategory(timelineEvents, value);
-    renderTimeline(filtered);
-}
+    timelineEvents = JSON.parse(historyStack.pop());
 
-/* DRAG DROP SORT (simple swap logic) */
-timeline.addEventListener("dragover", (e) => {
-    e.preventDefault();
-});
-
-timeline.addEventListener("drop", (e) => {
-    const draggedId = +e.dataTransfer.getData("text/plain");
-
-    const target = timelineEvents.find(e => e.id == draggedId);
-    timelineEvents = timelineEvents.filter(e => e.id !== draggedId);
-
-    timelineEvents.push(target);
-
+    persist();
     renderTimeline();
-});
+
+    showStatus("Undo Done ↶");
+}
+
+/* CLEAR ALL */
+function clearAll() {
+    pushHistory();
+
+    timelineEvents = [];
+
+    persist();
+    renderTimeline();
+
+    showStatus("All Cleared");
+}
+
+/* IMPORT */
+function handleImport(event) {
+    importJSON(event.target.files[0], (data) => {
+        pushHistory();
+
+        timelineEvents = data;
+
+        persist();
+        renderTimeline();
+
+        showStatus("Imported ✔");
+    });
+}
+
+/* EXPORT */
+function handleExport() {
+    exportJSON(timelineEvents);
+}
+
+/* STATUS */
+function showStatus(msg) {
+    console.log(msg);
+}
 
 renderTimeline();
