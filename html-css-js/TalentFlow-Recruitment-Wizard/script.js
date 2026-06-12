@@ -670,35 +670,49 @@ function formatMonth(val) {
 ========================================= */
 
 function bindFormSubmit() {
+
+    // Block accidental native form submit (e.g. Enter key inside a field)
     form.addEventListener("submit", function (e) {
         e.preventDefault();
-        if (!validateStep(4)) return;
+    });
 
-        // Populate success screen
+    // All submit logic on button click — fixes GitHub Pages / browser
+    // native validation blocking hidden fields in other steps
+    document.getElementById("submitBtn").addEventListener("click", function () {
+
+        const agreed = document.getElementById("agreeTerms").checked;
+        if (!agreed) {
+            showToast("Please confirm your information is accurate before submitting.", "warning");
+            return;
+        }
+
         document.getElementById("successName").textContent =
-            document.getElementById("fullName").value || "Applicant";
+            document.getElementById("fullName").value.trim() || "Applicant";
         document.getElementById("successJob").textContent =
             document.getElementById("desiredJob").value || "the position";
         document.getElementById("successEmail").textContent =
-            document.getElementById("email").value || "";
+            document.getElementById("email").value.trim() || "";
 
-        // Pill summary
-        const pills = document.getElementById("successPills");
+        const pills      = document.getElementById("successPills");
+        const cityVal    = document.getElementById("city").value.trim();
+        const countryVal = document.getElementById("country").value.trim();
+        const availVal   = document.getElementById("availability").value;
+        const expVal     = document.getElementById("totalExperience").value.trim();
+
         const pillData = [
-            { icon: "bi-geo-alt-fill", text: document.getElementById("city").value || document.getElementById("country").value },
-            { icon: "bi-clock-fill", text: document.getElementById("availability").value },
-            { icon: "bi-bar-chart-fill", text: (document.getElementById("totalExperience").value || "0") + " yrs experience" }
-        ].filter(p => p.text && p.text !== "—");
+            { icon: "bi-geo-alt-fill",   text: cityVal || countryVal },
+            { icon: "bi-clock-fill",     text: availVal },
+            { icon: "bi-bar-chart-fill", text: (expVal || "0") + " yrs experience" }
+        ].filter(p => p.text);
 
         pills.innerHTML = pillData.map(p =>
             `<span class="success-pill"><i class="bi ${p.icon}"></i> ${escHtml(p.text)}</span>`
         ).join("");
 
-        // Hide/show
-        formSection.style.display = "none";
+        formSection.style.display                                 = "none";
         document.getElementById("progressSection").style.display = "none";
-        document.getElementById("heroSection").style.display = "none";
-        successSection.style.display = "block";
+        document.getElementById("heroSection").style.display     = "none";
+        successSection.style.display                             = "block";
 
         localStorage.removeItem("talentFlowData");
         window.scrollTo({ top: 0, behavior: "smooth" });
