@@ -1,0 +1,349 @@
+/*
+═══════════════════════════════════════════════════════════════
+ Project: FastBite Restaurant Landing Page
+ Developer: Mirza Hadi
+ Brand: HS3Dev
+═══════════════════════════════════════════════════════════════
+*/
+
+/* ==========================
+   GLOBAL
+========================== */
+
+:root{
+    --dark:#121212;
+    --orange:#ff6b00;
+    --yellow:#ffc107;
+    --cream:#fff8e8;
+    --white:#ffffff;
+    --gray:#6b7280;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+    background:var(--cream);
+    color:var(--dark);
+    overflow-x:hidden;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.custom-navbar{
+    background:var(--dark);
+    box-shadow:0 2px 15px rgba(0,0,0,.15);
+}
+
+.navbar-brand{
+    color:var(--yellow) !important;
+    font-size:1.6rem;
+    letter-spacing:.5px;
+}
+
+.nav-link{
+    color:var(--white) !important;
+    font-weight:600;
+    margin-left:10px;
+    transition:.3s;
+}
+
+.nav-link:hover{
+    color:var(--yellow) !important;
+}
+
+.cart-badge{
+    background:var(--orange);
+    color:#fff;
+    padding:3px 8px;
+    border-radius:50px;
+    font-size:.75rem;
+    margin-left:5px;
+}
+
+.navbar-toggler{
+    background:#fff;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero-section{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    padding:80px 0;
+    background:
+    linear-gradient(
+        135deg,
+        #fff8e8 0%,
+        #fff4d4 100%
+    );
+}
+
+.hero-section h1{
+    font-size:3.4rem;
+    font-weight:800;
+    margin-bottom:20px;
+    line-height:1.1;
+}
+
+.hero-section p{
+    font-size:1.1rem;
+    color:var(--gray);
+    margin-bottom:30px;
+}
+
+.hero-image{
+    width:100%;
+    max-width:550px;
+    border-radius:25px;
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.15);
+}
+
+.hero-section .btn{
+    margin-right:10px;
+    margin-bottom:10px;
+}
+
+/* ==========================
+   SECTIONS
+========================== */
+
+.menu-section,
+.cart-section,
+.order-section{
+    padding:90px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    font-weight:800;
+}
+
+.section-title p{
+    color:var(--gray);
+}
+
+/* ==========================
+   FOOD CARD
+========================== */
+
+.food-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+    height:100%;
+}
+
+.food-card:hover{
+    transform:translateY(-8px);
+}
+
+.food-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.food-card h4{
+    font-size:1.3rem;
+    font-weight:700;
+    margin:18px 20px 10px;
+}
+
+.food-card p{
+    color:var(--gray);
+    margin:0 20px 15px;
+}
+
+.food-card h5{
+    margin:0 20px 18px;
+    color:var(--orange);
+    font-weight:800;
+}
+
+.food-card .btn{
+    margin:0 8px 15px;
+}
+
+/* ==========================
+   CART SECTION
+========================== */
+
+.cart-section{
+    background:#fff;
+}
+
+.cart-section h2{
+    text-align:center;
+    font-weight:800;
+    margin-bottom:30px;
+}
+
+#cartItems{
+    max-width:800px;
+    margin:auto;
+    background:#f8f8f8;
+    border-radius:15px;
+    padding:25px;
+    min-height:120px;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 0;
+    border-bottom:1px solid #ddd;
+}
+
+/* ==========================
+   ORDER SECTION
+========================== */
+
+.order-section{
+    background:
+    linear-gradient(
+        135deg,
+        #fff4d4,
+        #fff8e8
+    );
+}
+
+.order-section h2{
+    text-align:center;
+    font-weight:800;
+    margin-bottom:35px;
+}
+
+#orderForm{
+    max-width:800px;
+    margin:auto;
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+}
+
+.form-control{
+    border-radius:12px;
+    padding:12px;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.btn-warning{
+    background:var(--yellow);
+    border:none;
+    color:#111;
+    font-weight:700;
+}
+
+.btn-warning:hover{
+    background:#ffb300;
+}
+
+.btn-dark{
+    background:var(--dark);
+}
+
+#loadMoreBtn{
+    padding:14px 30px;
+    font-weight:700;
+    border-radius:50px;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.footer{
+    background:var(--dark);
+    color:#fff;
+    padding:50px 0;
+}
+
+.footer h5{
+    color:var(--yellow);
+    margin-bottom:15px;
+}
+
+.footer p{
+    margin-bottom:8px;
+    color:#d1d5db;
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:991px){
+
+    .hero-section{
+        text-align:center;
+        padding:60px 0;
+    }
+
+    .hero-section h1{
+        font-size:2.5rem;
+    }
+
+    .hero-image{
+        margin-top:40px;
+    }
+}
+
+@media(max-width:768px){
+
+    .hero-section h1{
+        font-size:2rem;
+    }
+
+    .section-title h2{
+        font-size:2rem;
+    }
+
+    .food-card img{
+        height:200px;
+    }
+
+    #orderForm{
+        padding:20px;
+    }
+}
+
+@media(max-width:576px){
+
+    .navbar-brand{
+        font-size:1.3rem;
+    }
+
+    .hero-section h1{
+        font-size:1.8rem;
+    }
+
+    .food-card .btn{
+        width:calc(100% - 16px);
+        margin-bottom:10px;
+    }
+}
