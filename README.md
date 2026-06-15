@@ -44,6 +44,7 @@ for international clients.
 | 02 | [To-Do-Dashboard-App](./html-css-js/To-Do-Dashboard-App/) | To Do Dashboard App | 
 | 03 | [Image-Gallery-Grid-Layout-App](./html-css-js/Image-Gallery-Grid-Layout-App/) | Short description | 
 | 04 | [TalentFlow-Recruitment-Wizard](./html-css-js/TalentFlow-Recruitment-Wizard/) | TalenFlow Recruitment Wizard |  |
+| 04 | [EmpowerFit-Womens-Fitness-Club](./html-css-js/EmpowerFit-Womens-Fitness-Club/) | TalenFlow Recruitment Wizard |  |
 
 *More projects added weekly*
 
