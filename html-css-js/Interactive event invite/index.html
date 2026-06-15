@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIF Gala RSVP</title>
+
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Event Header -->
+        <header>
+            <h1>You're Invited to the GIF Gala: Where Memes Come to Life!</h1>
+            <h2>7/21/23</h2>
+        </header>
+
+        <!-- Event Description -->
+        <section class="event-description">
+            <p>
+                Join us for an unforgettable evening where your favorite GIFs,
+                memes, and internet legends step into the real world. Dress as
+                your favorite viral character, enjoy themed activities, and
+                celebrate internet culture with fellow meme enthusiasts.
+            </p>
+        </section>
+
+        <!-- RSVP Form -->
+        <section class="rsvp-section">
+            <h3>RSVP</h3>
+
+            <form id="rsvp-form">
+
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required>
+
+                <label for="attendance">Will You Attend?</label>
+
+<select id="attendance" name="attendance" required>
+    <option value="">Select an option</option>
+    <option value="attending">Yes, I'll be there! 🎉</option>
+    <option value="not-attending">No, I can't make it</option>
+</select>
+
+                <button type="submit">
+                    Submit RSVP
+                </button>
+
+            </form>
+        </section>
+
+        <!-- Confirmation Message Area -->
+        <section class="confirmation-section">
+            <div id="confirmation-message"></div>
+        </section>
+
+    </div>
+<footer class="site-footer">
+    <p>
+        Built with ❤️ by <strong>Mirza Hadi</strong> – Full-Stack WordPress Developer & Technical Problem Solver
+    </p>
+
+    <p>
+             ✉️ mirzahadi@hotmail.com
+    </p>
+
+    <p>
+        <a href="https://hadi-mirza.com" target="_blank">Portfolio</a> |
+        <a href="https://www.linkedin.com/in/hadi-mirza" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/hadibaig" target="_blank">GitHub</a>
+    </p>
+</footer>
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>

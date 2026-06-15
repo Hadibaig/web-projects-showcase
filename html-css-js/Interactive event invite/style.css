@@ -1,0 +1,158 @@
+/* Import a fun Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Style the entire page */
+body {
+    font-family: 'Poppins', sans-serif; /* Use a modern, friendly font */
+    background: linear-gradient(135deg, #ff6ec7, #7b68ee); /* Colorful gradient background */
+    margin: 0; /* Remove default page margins */
+    padding: 20px; /* Add space around the page */
+    min-height: 100vh; /* Make page fill the screen height */
+   /*display: flex; /* Enable flexible layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+/* Main content container */
+.container {
+    max-width: 700px; /* Limit width of form card */
+    margin: 60px auto; /* Auto left/right centers it horizontally */
+    padding: 30px; /* Space inside the box */
+    background-color: #ffffff; /* White form background */
+    border-radius: 20px; /* Rounded corners */
+    text-align: center; /* Center text inside */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Soft shadow */
+}
+
+/* Main event title */
+h1 {
+    color: #ff4f9a; /* Bright pink heading */
+    font-size: 2rem; /* Large heading size */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+/* Event date */
+h2 {
+    color: #7b68ee; /* Purple date color */
+    margin-bottom: 25px; /* Space below date */
+}
+
+/* RSVP section heading */
+h3 {
+    color: #444444; /* Dark gray heading */
+    margin-bottom: 20px; /* Space below heading */
+}
+
+/* Event description */
+.event-description p {
+    color: #555555; /* Medium gray text */
+    line-height: 1.7; /* Improve readability */
+    margin-bottom: 30px; /* Space below description */
+}
+
+/* Form layout */
+form {
+    text-align: left; /* Align labels and inputs neatly */
+}
+
+/* Form labels */
+label {
+    display: block; /* Put each label on its own line */
+    margin-bottom: 6px; /* Small space below label */
+    font-weight: 600; /* Make labels stand out */
+    color: #333333; /* Dark text color */
+}
+
+/* Form input fields */
+input {
+    width: 100%; /* Make inputs fill container width */
+    padding: 12px; /* Add space inside inputs */
+    margin-bottom: 18px; /* Add space below inputs */
+    border: 2px solid #dddddd; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding in width */
+    font-size: 16px; /* Comfortable text size */
+}
+
+/* Highlight input when selected */
+input:focus {
+    outline: none; /* Remove default browser outline */
+    border-color: #7b68ee; /* Show purple focus border */
+}
+
+/* Submit button */
+button {
+    background-color: #ff4f9a; /* Bright pink button */
+    color: white; /* White button text */
+    border: none; /* Remove default border */
+    padding: 14px 20px; /* Add space inside button */
+    width: 100%; /* Make button full width */
+    border-radius: 10px; /* Round button corners */
+    font-size: 16px; /* Set text size */
+    font-weight: 600; /* Make text bold */
+    cursor: pointer; /* Show pointer cursor */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #e63d87; /* Slightly darker pink */
+}
+
+/* Confirmation message area */
+#confirmation-message {
+    display: none; /* Hide message until form is submitted */
+    margin-top: 25px; /* Space above message */
+    padding: 15px; /* Add space inside message box */
+    background-color: #e8fff0; /* Light green background */
+    border: 2px solid #65c18c; /* Green border */
+    border-radius: 10px; /* Round corners */
+    color: #2e7d32; /* Dark green text */
+    font-weight: 600; /* Make text stand out */
+}
+
+/* Mobile-friendly adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px; /* Reduce padding on smaller screens */
+    }
+
+    h1 {
+        font-size: 1.6rem; /* Smaller heading for mobile */
+    }
+
+    h2 {
+        font-size: 1.1rem; /* Smaller date text */
+    }
+}
+/* Form input fields and dropdown */
+input,
+select {
+    width: 100%; /* Make field fill container width */
+    padding: 12px; /* Add space inside field */
+    margin-bottom: 18px; /* Add space below field */
+    border: 2px solid #dddddd; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding in width */
+    font-size: 16px; /* Comfortable text size */
+}
+.site-footer {
+    text-align: center; /* Center all footer text */
+    margin-top: 40px; /* Space above footer */
+    padding: 20px; /* Space inside footer */
+    font-size: 14px; /* Slightly smaller text */
+    color: #ffffff; /* White text for contrast */
+    background-color: #471869; /* Brand color background */
+}
+
+/* Footer links styling */
+.site-footer a {
+    color: #ffffff; /* White links */
+    text-decoration: none; /* Remove underline */
+    margin: 0 5px; /* Space between links */
+}
+
+/* Hover effect for links */
+.site-footer a:hover {
+    text-decoration: underline; /* Show underline on hover */
+}
