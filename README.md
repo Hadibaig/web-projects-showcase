@@ -40,11 +40,11 @@ for international clients.
 
 | # | Project | Description | Live Demo |
 |---|---------|-------------|-----------|
-| 01 | [frontend-login-web-page](./html-css-js/frontend-login-web-page/) | Simple Login Form | 
+| 01 | [frontend-login-web-page](./html-css-js/frontend-login-web-page/) | Simple Login Form | https://hadibaig.github.io/web-projects-showcase/html-css-js/frontend-login-web-page/login.html
 | 02 | [To-Do-Dashboard-App](./html-css-js/To-Do-Dashboard-App/) | To Do Dashboard App | 
 | 03 | [Image-Gallery-Grid-Layout-App](./html-css-js/Image-Gallery-Grid-Layout-App/) | Short description | 
 | 04 | [TalentFlow-Recruitment-Wizard](./html-css-js/TalentFlow-Recruitment-Wizard/) | TalenFlow Recruitment Wizard |  |
-| 04 | [EmpowerFit-Womens-Fitness-Club](./html-css-js/EmpowerFit-Womens-Fitness-Club/) | TalenFlow Recruitment Wizard |  |
+| 05 | [EmpowerFit-Womens-Fitness-Club](./html-css-js/EmpowerFit-Womens-Fitness-Club/) | EmpowerFit Womens Fitness Club Landing page|  |
 
 *More projects added weekly*
 
