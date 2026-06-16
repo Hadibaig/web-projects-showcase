@@ -1,4 +1,3 @@
-```md
 # 💜 EmpowerFit Women's Fitness Club
 
 A modern, responsive fitness and wellness landing page focused on women's health, fitness, confidence, and lifestyle transformation.
@@ -139,4 +138,3 @@ Modern Web Development • WordPress Solutions • Digital Systems
 ## 📜 License
 
 This project is available for educational and portfolio purposes.
-```
