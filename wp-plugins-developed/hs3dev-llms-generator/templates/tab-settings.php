@@ -169,7 +169,7 @@ unset( $llmsg_post_types['attachment'] );
 						<option value="daily" <?php selected( $llmsg_settings['update_frequency'], 'daily' ); ?>><?php esc_html_e( 'Daily', 'hs3dev-llms-generator' ); ?></option>
 						<option value="weekly" <?php selected( $llmsg_settings['update_frequency'], 'weekly' ); ?>><?php esc_html_e( 'Weekly', 'hs3dev-llms-generator' ); ?></option>
 					</select>
-					<p class="description"><?php esc_html_e( 'Automatic regeneration will be wired up to this setting in a later phase. For now, use the Generate tab to rebuild files manually.', 'hs3dev-llms-generator' ); ?></p>
+					<p class="description"><?php esc_html_e( 'Automatic regeneration', 'hs3dev-llms-generator' ); ?></p>
 				</td>
 			</tr>
 		</table>
