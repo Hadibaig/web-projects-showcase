@@ -28,7 +28,7 @@ for international clients.
 | Category | Technologies | Status |
 |----------|-------------|--------|
 | [HTML CSS JS](./html-css-js/) | HTML5, CSS3, JavaScript | ✅ Active |
-| [WordPress Plugins](./wordpress-plugins/) | PHP, WordPress API | 🔜 Coming Soon |
+| [wp-plugins-developed](./wp-plugins-developed/) | PHP, WordPress API | ✅ Active |
 | [WordPress Themes](./wordpress-themes/) | PHP, CSS, WordPress | 🔜 Coming Soon |
 | [PHP Projects](./php-projects/) | PHP, MySQL | 🔜 Coming Soon |
 | [React Projects](./react-projects/) | React, JavaScript | 🔜 July 2026 |
