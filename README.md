@@ -48,6 +48,7 @@ for international clients.
 | 06 | [FastBite-Restaurant-Landing-Page](./html-css-js/FastBite-Restaurant-Landing-Page/) | FastBite Restaurant Landing Page|[FastBite-Restaurant-Landing-Page](./html-css-js/FastBite-Restaurant-Landing-Page/)  |
 | 07 | [Image-Gallery-Grid-Layout-App](./html-css-js/Image-Gallery-Grid-Layout-App/) | Image Gallery Grid Layout App|[Image-Gallery-Grid-Layout-App](./html-css-js/Image-Gallery-Grid-Layout-App/)  |
 | 08 | [Interactive-event-invite](./html-css-js/Interactive-event-invite/) | Interactive event invite|[Interactive-event-invite](./html-css-js/Interactive-event-invite/)  |
+| 09 | [cv-read-more-function](./html-css-js/cv-read-more-function/) | CV Read More Function|[Interactive-event-invite](./html-css-js/cv-read-more-function/)  |
 
 *More projects added weekly*
 
