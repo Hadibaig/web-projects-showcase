@@ -23,15 +23,19 @@ Full-Stack WordPress Developer & Technical Problem Solver
 
 ---
 
-## 🗂️ Projects List
+## 🗂️ HTML CSS JS Projects List
 
 | # | Project | Description | Live Demo |
 |---|---------|-------------|-----------|
-| 01 | [frontend-login-web-page](./html-css-js/frontend-login-web-page/) | Simple Login Form | [frontend-login-web-page](./html-css-js/frontend-login-web-page/)
-| 02 | [To-Do-Dashboard-App](./html-css-js/To-Do-Dashboard-App/) | To Do Dashboard App | 
-| 03 | [Image-Gallery-Grid-Layout-App](./html-css-js/Image-Gallery-Grid-Layout-App/) | Short description | 
-| 04 | [TalentFlow-Recruitment-Wizard](./html-css-js/TalentFlow-Recruitment-Wizard/) | TalenFlow Recruitment Wizard |  |
-| 05 | [EmpowerFit-Womens-Fitness-Club](./html-css-js/EmpowerFit-Womens-Fitness-Club/) | EmpowerFit Womens Fitness Club Landing page|  |
+| 01 | [frontend-login-web-page](./frontend-login-web-page/) | Simple Login Form | [frontend-login-web-page](./frontend-login-web-page/login.html/)
+| 02 | [To-Do-Dashboard-App](./To-Do-Dashboard-App/) | To Do Dashboard App |[To-Do-Dashboard-App](./To-Do-Dashboard-App/) 
+| 03 | [Timeline-Builder-App](./Timeline-Builder-App/) | Timeline Builder App |[Timeline-Builder-App](./Timeline-Builder-App/) 
+| 04 | [TalentFlow-Recruitment-Wizard](./TalentFlow-Recruitment-Wizard/) | TalenFlow Recruitment Wizard |[TalentFlow-Recruitment-Wizard](./TalentFlow-Recruitment-Wizard/)  |
+| 05 | [EmpowerFit-Womens-Fitness-Club](./EmpowerFit-Womens-Fitness-Club/) | EmpowerFit Womens Fitness Club Landing page|[EmpowerFit-Womens-Fitness-Club](./EmpowerFit-Womens-Fitness-Club/)  |
+| 06 | [FastBite-Restaurant-Landing-Page](./FastBite-Restaurant-Landing-Page/) | FastBite Restaurant Landing Page|[FastBite-Restaurant-Landing-Page](./FastBite-Restaurant-Landing-Page/)  |
+| 07 | [Image-Gallery-Grid-Layout-App](./Image-Gallery-Grid-Layout-App/) | Image Gallery Grid Layout App|[Image-Gallery-Grid-Layout-App](./Image-Gallery-Grid-Layout-App/)  |
+| 08 | [Interactive-event-invite](./Interactive-event-invite/) | Interactive event invite|[Interactive-event-invite](./Interactive-event-invite/)  |
+| 09 | [cv-read-more-function](./cv-read-more-function/) | CV Read More Function|[Interactive-event-invite](./cv-read-more-function/)  |
 
 *Projects added weekly — follow to stay updated*
 

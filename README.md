@@ -28,7 +28,7 @@ for international clients.
 | Category | Technologies | Status |
 |----------|-------------|--------|
 | [HTML CSS JS](./html-css-js/) | HTML5, CSS3, JavaScript | ✅ Active |
-| [WordPress Plugins](./wordpress-plugins/) | PHP, WordPress API | 🔜 Coming Soon |
+| [wp-plugins-developed](./wp-plugins-developed/) | PHP, WordPress API | ✅ Active |
 | [WordPress Themes](./wordpress-themes/) | PHP, CSS, WordPress | 🔜 Coming Soon |
 | [PHP Projects](./php-projects/) | PHP, MySQL | 🔜 Coming Soon |
 | [React Projects](./react-projects/) | React, JavaScript | 🔜 July 2026 |
@@ -48,6 +48,7 @@ for international clients.
 | 06 | [FastBite-Restaurant-Landing-Page](./html-css-js/FastBite-Restaurant-Landing-Page/) | FastBite Restaurant Landing Page|[FastBite-Restaurant-Landing-Page](./html-css-js/FastBite-Restaurant-Landing-Page/)  |
 | 07 | [Image-Gallery-Grid-Layout-App](./html-css-js/Image-Gallery-Grid-Layout-App/) | Image Gallery Grid Layout App|[Image-Gallery-Grid-Layout-App](./html-css-js/Image-Gallery-Grid-Layout-App/)  |
 | 08 | [Interactive-event-invite](./html-css-js/Interactive-event-invite/) | Interactive event invite|[Interactive-event-invite](./html-css-js/Interactive-event-invite/)  |
+| 09 | [cv-read-more-function](./html-css-js/cv-read-more-function/) | CV Read More Function|[Interactive-event-invite](./html-css-js/cv-read-more-function/)  |
 
 *More projects added weekly*
 
