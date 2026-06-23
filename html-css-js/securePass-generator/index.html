@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SecurePass Generator</title>
+
+  <!-- CSS File -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Optional Favicon -->
+  <link rel="icon" href="favicon.ico" />
+
+  <!-- Google Font (Optional for modern UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="app-header">
+    <div class="logo">
+      🔐 SecurePass Generator
+    </div>
+    <p class="tagline">Generate strong and secure passwords instantly</p>
+  </header>
+
+  <!-- MAIN APP CONTAINER -->
+  <main class="container">
+
+    <!-- PASSWORD DISPLAY -->
+    <section class="card password-display">
+      <h2>Generated Password</h2>
+
+      <div class="password-box">
+        <input 
+          type="text" 
+          id="passwordOutput" 
+          placeholder="Your secure password will appear here"
+          readonly
+        />
+      </div>
+
+      <div class="button-group">
+        <button id="generateBtn">Generate New</button>
+        <button id="copyBtn">Copy Password</button>
+      </div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section class="card settings">
+
+      <!-- PASSWORD LENGTH -->
+      <div class="setting-block">
+        <h3>Password Length</h3>
+
+        <div class="length-control">
+          <input type="range" id="lengthSlider" min="4" max="50" value="12" />
+          <span id="lengthValue">12</span>
+        </div>
+      </div>
+
+      <!-- CHARACTER OPTIONS -->
+      <div class="setting-block">
+        <h3>Character Options</h3>
+
+        <label><input type="checkbox" id="uppercase" checked /> Uppercase (A-Z)</label>
+        <label><input type="checkbox" id="lowercase" checked /> Lowercase (a-z)</label>
+        <label><input type="checkbox" id="numbers" checked /> Numbers (0-9)</label>
+        <label><input type="checkbox" id="symbols" checked /> Symbols (!@#$%)</label>
+        <label><input type="checkbox" id="excludeSimilar" /> Exclude Similar Characters</label>
+      </div>
+
+      <!-- PASSWORD STRENGTH -->
+      <div class="setting-block">
+        <h3>Password Strength</h3>
+
+        <div class="strength-meter">
+          <div id="strengthBar" class="strength-bar"></div>
+        </div>
+
+        <p id="strengthText">Medium</p>
+      </div>
+
+    </section>
+
+    <!-- PASSWORD HISTORY -->
+    <section class="card history">
+      <h3>Recent Passwords</h3>
+      <ul id="historyList">
+        <!-- JS will inject items here -->
+      </ul>
+    </section>
+
+    <!-- SECURITY TIPS -->
+    <section class="card tips">
+      <h3>Security Tips</h3>
+
+      <div class="tips-grid">
+        <div class="tip">Use at least 12 characters</div>
+        <div class="tip">Avoid personal information</div>
+        <div class="tip">Use unique passwords</div>
+        <div class="tip">Enable MFA where possible</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="toast">Password copied successfully!</div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Developed by <strong>Mirza Hadi</strong></p>
+    <p>Full Stack Developer & Technical Problem Solver</p>
+    <p>Email: mirzahadi@hotmail.com</p>
+    <p>Powered by HS3Dev</p>
+  </footer>
+
+  <!-- JS File -->
+  <script src="script.js"></script>
+
+</body>
+</html>
