@@ -49,6 +49,9 @@ for international clients.
 | 07 | [Image-Gallery-Grid-Layout-App](./html-css-js/Image-Gallery-Grid-Layout-App/) | Image Gallery Grid Layout App|[Image-Gallery-Grid-Layout-App](./html-css-js/Image-Gallery-Grid-Layout-App/)  |
 | 08 | [Interactive-event-invite](./html-css-js/Interactive-event-invite/) | Interactive event invite|[Interactive-event-invite](./html-css-js/Interactive-event-invite/)  |
 | 09 | [cv-read-more-function](./html-css-js/cv-read-more-function/) | CV Read More Function|[Interactive-event-invite](./html-css-js/cv-read-more-function/)  |
+cv-read-more-function/  |
+| 10 | [prime-estate-realty](./html-css-js/prime-estate-realty/) | Prime Estate Realty|[prime-estate-realty](./html-css-js/prime-estate-realty/)  |
+| 11 | [securePass-generator](./html-css-js/securePass-generator/) | Secure Password Generator|[securePass-generator](./html-css-js/securePass-generator/)  |
 
 *More projects added weekly*
 
