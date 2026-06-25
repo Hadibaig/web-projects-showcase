@@ -369,15 +369,21 @@ section{
 
 .preview-area{
 
-    background:var(--card);
+    position: sticky;
 
-    border:1px solid var(--border);
+    top: 90px;
 
-    border-radius:20px;
+    background: #1E293B;
 
-    padding:25px;
+    padding: 30px;
 
-    height:100%;
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+    border: 1px solid #e5e7eb;
+
+    align-self: start;
 }
 
 .preview-box{
@@ -724,4 +730,30 @@ section{
     color:#94a3b8;
 
     font-size:14px;
+}
+
+.export-note{
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    border-left:4px solid #22c55e;
+
+    padding:15px;
+
+    border-radius:10px;
+    margin-top: 20px;
+    margin-bottom:10px;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    color:#475569;
+}
+
+.export-note strong{
+
+    color:#111827;
 }
