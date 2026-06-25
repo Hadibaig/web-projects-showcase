@@ -38,6 +38,7 @@ Full-Stack WordPress Developer & Technical Problem Solver
 | 09 | [cv-read-more-function](./cv-read-more-function/) | CV Read More Function|[Interactive-event-invite](./cv-read-more-function/)  |
 | 10 | [prime-estate-realty](./prime-estate-realty/) | Prime Estate Realty|[prime-estate-realty](./prime-estate-realty/)  |
 | 11 | [securePass-generator](./securePass-generator/) | Secure Password Generator|[securePass-generator](./securePass-generator/)  |
+| 11 | [buttoncraft-generator](./buttoncraft-generator/) | ButtobCraft Generator|[buttoncraft-generator](./buttoncraft-generator/)  |
 
 
 *Projects added weekly — follow to stay updated*
