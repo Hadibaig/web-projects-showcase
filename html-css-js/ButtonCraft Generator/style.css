@@ -625,3 +625,20 @@ section{
         font-size:.95rem;
     }
 }
+.generator-note{
+
+    color:#94a3b8;
+
+    margin-bottom:10px;
+
+    font-size:14px;
+}
+
+#currentPreset{
+
+    color:#22c55e;
+
+    margin-bottom:20px;
+
+    font-weight:700;
+}

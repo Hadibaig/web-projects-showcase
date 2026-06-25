@@ -392,5 +392,134 @@ showToast(
 /* =========================
    INITIAL LOAD
 ========================= */
+function loadPreset(type){
 
+    switch(type){
+
+        case "primary":
+
+            btnText.value = "Get Started";
+            bgColor.value = "#2563eb";
+            textColor.value = "#ffffff";
+            borderWidth.value = 0;
+            borderRadius.value = 8;
+            animationType.value = "none";
+
+            document.getElementById(
+            "currentPreset").innerText =
+            "Primary Button";
+
+        break;
+
+        case "secondary":
+
+            btnText.value = "Learn More";
+            bgColor.value = "#64748b";
+            textColor.value = "#ffffff";
+            borderWidth.value = 0;
+            borderRadius.value = 8;
+            animationType.value = "none";
+
+            document.getElementById(
+            "currentPreset").innerText =
+            "Secondary Button";
+
+        break;
+
+        case "outline":
+
+            btnText.value = "Contact Us";
+            bgColor.value = "#ffffff";
+            textColor.value = "#2563eb";
+            borderWidth.value = 2;
+            borderColor.value = "#2563eb";
+            borderRadius.value = 8;
+            animationType.value = "none";
+
+            document.getElementById(
+            "currentPreset").innerText =
+            "Outline Button";
+
+        break;
+
+        case "cta":
+
+            btnText.value = "Buy Now";
+            bgColor.value = "#f97316";
+            textColor.value = "#ffffff";
+            animationType.value = "pulse";
+
+            document.getElementById(
+            "currentPreset").innerText =
+            "CTA Button";
+
+        break;
+
+        case "gradient":
+
+            btnText.value = "Download";
+            bgColor.value = "#06b6d4";
+            textColor.value = "#ffffff";
+            animationType.value = "none";
+
+            document.getElementById(
+            "currentPreset").innerText =
+            "Gradient Button";
+
+        break;
+
+        case "neon":
+
+            btnText.value = "Explore";
+            bgColor.value = "#111827";
+            textColor.value = "#22c55e";
+            borderWidth.value = 2;
+            borderColor.value = "#22c55e";
+            animationType.value = "glow";
+
+            document.getElementById(
+            "currentPreset").innerText =
+            "Neon Button";
+
+        break;
+
+        case "glass":
+
+            btnText.value = "View Demo";
+            bgColor.value = "#94a3b8";
+            textColor.value = "#ffffff";
+            borderRadius.value = 15;
+            animationType.value = "none";
+
+            document.getElementById(
+            "currentPreset").innerText =
+            "Glass Button";
+
+        break;
+
+        case "square":
+
+            btnText.value = "Learn More";
+            bgColor.value = "#2563eb";
+            textColor.value = "#ffffff";
+            borderRadius.value = 0;
+            animationType.value = "none";
+
+            document.getElementById(
+            "currentPreset").innerText =
+            "Square Button";
+
+        break;
+    }
+
+    updateButton();
+
+    document
+    .getElementById("generator")
+    .scrollIntoView({
+
+        behavior:"smooth"
+
+    });
+}
 updateButton();

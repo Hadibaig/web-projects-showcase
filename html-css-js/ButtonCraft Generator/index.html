@@ -138,71 +138,93 @@
          BUTTON TYPES
     ========================= -->
 
-    <section id="library"
-        class="py-5">
+    <section id="library" class="py-5">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="section-title">
+        <div class="section-title">
 
-                <h2>Button Types & Use Cases</h2>
+            <h2>Button Types & Use Cases</h2>
 
-                <p>
-                    Learn where different button
-                    styles are commonly used.
-                </p>
+            <p>
+                Click any style below to load it into the Button Generator.
+            </p>
 
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h4>Primary Button</h4>
+                    <p>Main call-to-action button.</p>
+                    <button class="btn btn-success w-100"
+                        onclick="loadPreset('primary')">
+                        Customize This Style
+                    </button>
+                </div>
             </div>
 
-            <div class="row g-4">
-
-                <div class="col-md-4">
-                    <div class="info-card">
-                        <h4>Primary Button</h4>
-                        <p>Main call-to-action button.</p>
-                    </div>
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h4>Secondary Button</h4>
+                    <p>Supporting actions and navigation.</p>
+                    <button class="btn btn-secondary w-100"
+                        onclick="loadPreset('secondary')">
+                        Customize This Style
+                    </button>
                 </div>
+            </div>
 
-                <div class="col-md-4">
-                    <div class="info-card">
-                        <h4>Secondary Button</h4>
-                        <p>Alternative action button.</p>
-                    </div>
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h4>Outline Button</h4>
+                    <p>Minimal clean design.</p>
+                    <button class="btn btn-outline-primary w-100"
+                        onclick="loadPreset('outline')">
+                        Customize This Style
+                    </button>
                 </div>
+            </div>
 
-                <div class="col-md-4">
-                    <div class="info-card">
-                        <h4>Outline Button</h4>
-                        <p>Minimal and clean style.</p>
-                    </div>
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h4>CTA Button</h4>
+                    <p>Marketing and sales pages.</p>
+                    <button class="btn btn-warning w-100"
+                        onclick="loadPreset('cta')">
+                        Customize This Style
+                    </button>
                 </div>
+            </div>
 
-                <div class="col-md-4">
-                    <div class="info-card">
-                        <h4>Ghost Button</h4>
-                        <p>Transparent modern design.</p>
-                    </div>
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h4>Neon Button</h4>
+                    <p>Modern SaaS and tech websites.</p>
+                    <button class="btn btn-dark w-100"
+                        onclick="loadPreset('neon')">
+                        Customize This Style
+                    </button>
                 </div>
+            </div>
 
-                <div class="col-md-4">
-                    <div class="info-card">
-                        <h4>CTA Button</h4>
-                        <p>Designed for conversions.</p>
-                    </div>
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h4>Glass Button</h4>
+                    <p>Glassmorphism UI style.</p>
+                    <button class="btn btn-light w-100"
+                        onclick="loadPreset('glass')">
+                        Customize This Style
+                    </button>
                 </div>
-
-                <div class="col-md-4">
-                    <div class="info-card">
-                        <h4>Icon Button</h4>
-                        <p>Buttons with visual icons.</p>
-                    </div>
-                </div>
-
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
     <!-- =========================
          BUTTON SHOWCASE
@@ -219,39 +241,30 @@
             </div>
 
             <div class="showcase-grid">
-
-                <button class="btn-square">
-                    Learn More
+                <button class="btn-square" onclick="loadPreset('square')">
+                Learn More
                 </button>
-
-                <button class="btn-rounded">
-                    Contact Us
+                <button class="btn-rounded" onclick="loadPreset('secondary')">
+                 Contact Us
                 </button>
-
-                <button class="btn-pill">
-                    Get Started
+                <button class="btn-pill" onclick="loadPreset('cta')">
+                Get Started
                 </button>
-
-                <button class="btn-circle">
-                    +
+                <button class="btn-circle" onclick="loadPreset('circle')">
+                +               
                 </button>
-
-                <button class="btn-gradient">
-                    Download
+                <button class="btn-gradient" onclick="loadPreset('gradient')">
+                Download
                 </button>
-
-                <button class="btn-shadow">
-                    Join Now
+                <button class="btn-shadow" onclick="loadPreset('join')">
+                 Join Now
                 </button>
-
-                <button class="btn-neon">
-                    Explore
+                <button class="btn-neon" onclick="loadPreset('neon')">
+                Explore
                 </button>
-
-                <button class="btn-glass">
-                    View Demo
+                <button class="btn-glass" onclick="loadPreset('glass')">
+                View Demo
                 </button>
-
             </div>
 
         </div>
@@ -275,7 +288,9 @@
                     Customize your button and
                     instantly preview the result.
                 </p>
-
+                <h4 id="currentPreset">Custom Button</h4>
+                    <p class="generator-note"> Click any button style above to load it into
+the generator for customization.</p>
             </div>
 
             <div class="row">
@@ -399,7 +414,7 @@
                 <!-- RIGHT COLUMN -->
 
                 <div class="col-lg-7">
-
+                            
                     <div class="preview-area">
 
                         <h4>Live Preview</h4>
