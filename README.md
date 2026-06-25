@@ -51,6 +51,7 @@ for international clients.
 | 09 | [cv-read-more-function](./html-css-js/cv-read-more-function/) | CV read more function |[cv-read-more-function](./html-css-js/cv-read-more-function/)
 | 10 | [prime-estate-realty](./html-css-js/prime-estate-realty/) | Prime Estate Realty|[prime-estate-realty](./html-css-js/prime-estate-realty/)  |
 | 11 | [securePass-generator](./html-css-js/securePass-generator/) | Secure Password Generator|[securePass-generator](./html-css-js/securePass-generator/)  |
+| 12 | [buttoncraft-generator](./html-css-js/buttoncraft-generator/) | ButtonCraft Generator|[buttoncraft-generator](./html-css-js/buttoncraft-generator/)  |
 
 *More projects added weekly*
 
