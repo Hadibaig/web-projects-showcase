@@ -402,11 +402,13 @@ function loadPreset(type){
             bgColor.value = "#2563eb";
             textColor.value = "#ffffff";
             borderWidth.value = 0;
+            borderColor.value = "#000000";
             borderRadius.value = 8;
+            btnWidth.value = 180;
+            btnHeight.value = 55;
             animationType.value = "none";
 
-            document.getElementById(
-            "currentPreset").innerText =
+            document.getElementById("currentPreset").innerText =
             "Primary Button";
 
         break;
@@ -417,11 +419,13 @@ function loadPreset(type){
             bgColor.value = "#64748b";
             textColor.value = "#ffffff";
             borderWidth.value = 0;
+            borderColor.value = "#000000";
             borderRadius.value = 8;
+            btnWidth.value = 180;
+            btnHeight.value = 55;
             animationType.value = "none";
 
-            document.getElementById(
-            "currentPreset").innerText =
+            document.getElementById("currentPreset").innerText =
             "Secondary Button";
 
         break;
@@ -434,10 +438,11 @@ function loadPreset(type){
             borderWidth.value = 2;
             borderColor.value = "#2563eb";
             borderRadius.value = 8;
+            btnWidth.value = 180;
+            btnHeight.value = 55;
             animationType.value = "none";
 
-            document.getElementById(
-            "currentPreset").innerText =
+            document.getElementById("currentPreset").innerText =
             "Outline Button";
 
         break;
@@ -447,10 +452,14 @@ function loadPreset(type){
             btnText.value = "Buy Now";
             bgColor.value = "#f97316";
             textColor.value = "#ffffff";
+            borderWidth.value = 0;
+            borderColor.value = "#000000";
+            borderRadius.value = 50;
+            btnWidth.value = 200;
+            btnHeight.value = 60;
             animationType.value = "pulse";
 
-            document.getElementById(
-            "currentPreset").innerText =
+            document.getElementById("currentPreset").innerText =
             "CTA Button";
 
         break;
@@ -460,10 +469,14 @@ function loadPreset(type){
             btnText.value = "Download";
             bgColor.value = "#06b6d4";
             textColor.value = "#ffffff";
+            borderWidth.value = 0;
+            borderColor.value = "#000000";
+            borderRadius.value = 12;
+            btnWidth.value = 200;
+            btnHeight.value = 55;
             animationType.value = "none";
 
-            document.getElementById(
-            "currentPreset").innerText =
+            document.getElementById("currentPreset").innerText =
             "Gradient Button";
 
         break;
@@ -475,24 +488,28 @@ function loadPreset(type){
             textColor.value = "#22c55e";
             borderWidth.value = 2;
             borderColor.value = "#22c55e";
+            borderRadius.value = 10;
+            btnWidth.value = 200;
+            btnHeight.value = 55;
             animationType.value = "glow";
 
-            document.getElementById(
-            "currentPreset").innerText =
+            document.getElementById("currentPreset").innerText =
             "Neon Button";
 
         break;
 
         case "glass":
 
-            btnText.value = "View Demo";
+            btnText.value = "Glass Button";
             bgColor.value = "#94a3b8";
             textColor.value = "#ffffff";
+            borderWidth.value = 0;
             borderRadius.value = 15;
+            btnWidth.value = 200;
+            btnHeight.value = 55;
             animationType.value = "none";
 
-            document.getElementById(
-            "currentPreset").innerText =
+            document.getElementById("currentPreset").innerText =
             "Glass Button";
 
         break;
@@ -502,24 +519,87 @@ function loadPreset(type){
             btnText.value = "Learn More";
             bgColor.value = "#2563eb";
             textColor.value = "#ffffff";
+            borderWidth.value = 0;
             borderRadius.value = 0;
+            btnWidth.value = 180;
+            btnHeight.value = 55;
             animationType.value = "none";
 
-            document.getElementById(
-            "currentPreset").innerText =
+            document.getElementById("currentPreset").innerText =
             "Square Button";
+
+        break;
+
+        case "circle":
+
+            btnText.value = "+";
+            bgColor.value = "#ec4899";
+            textColor.value = "#ffffff";
+            borderWidth.value = 0;
+            borderRadius.value = 50;
+            btnWidth.value = 70;
+            btnHeight.value = 70;
+            animationType.value = "none";
+
+            document.getElementById("currentPreset").innerText =
+            "Circle Button";
+
+        break;
+
+        case "contact":
+
+            btnText.value = "Contact Us";
+            bgColor.value = "#16a34a";
+            textColor.value = "#ffffff";
+            borderWidth.value = 0;
+            borderRadius.value = 12;
+            btnWidth.value = 200;
+            btnHeight.value = 55;
+            animationType.value = "none";
+
+            document.getElementById("currentPreset").innerText =
+            "Contact Button";
+
+        break;
+
+        case "join":
+
+            btnText.value = "Join Now";
+            bgColor.value = "#ffffff";
+            textColor.value = "#111827";
+            borderWidth.value = 0;
+            borderRadius.value = 8;
+            btnWidth.value = 180;
+            btnHeight.value = 55;
+            animationType.value = "none";
+
+            document.getElementById("currentPreset").innerText =
+            "Join Button";
+
+        break;
+
+        case "demo":
+
+            btnText.value = "View Demo";
+            bgColor.value = "#8b5cf6";
+            textColor.value = "#ffffff";
+            borderWidth.value = 0;
+            borderRadius.value = 15;
+            btnWidth.value = 200;
+            btnHeight.value = 55;
+            animationType.value = "float";
+
+            document.getElementById("currentPreset").innerText =
+            "Demo Button";
 
         break;
     }
 
     updateButton();
 
-    document
-    .getElementById("generator")
+    document.getElementById("generator")
     .scrollIntoView({
-
         behavior:"smooth"
-
     });
 }
 updateButton();
