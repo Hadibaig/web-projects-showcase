@@ -52,6 +52,7 @@ for international clients.
 | 10 | [prime-estate-realty](./html-css-js/prime-estate-realty/) | Prime Estate Realty|[prime-estate-realty](./html-css-js/prime-estate-realty/)  |
 | 11 | [securePass-generator](./html-css-js/securePass-generator/) | Secure Password Generator|[securePass-generator](./html-css-js/securePass-generator/)  |
 | 12 | [buttoncraft-generator](./html-css-js/buttoncraft-generator/) | ButtonCraft Generator|[buttoncraft-generator](./html-css-js/buttoncraft-generator/)  |
+| 13 | [buttoncraft-generator-v2-1-0](./html-css-js/buttoncraft-generator-v2-1-0/) | ButtonCraft Generator V2.1.0|[buttoncraft-generator-v2-1-0](./html-css-js/buttoncraft-generator-v2-1-0/)  |
 
 *More projects added weekly*
 
