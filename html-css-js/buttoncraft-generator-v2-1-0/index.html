@@ -1,0 +1,800 @@
+<!--
+════════════════════════════════════════
+  Project:    ButtonCraft Generator
+  Developer:  Mirza Hadi
+  Role:       Full Stack Developer & Technical Problem Solver
+
+  Email:      mirzahadi@hotmail.com
+  Portfolio:  https://hadi-mirza.com
+  LinkedIn:   https://www.linkedin.com/in/hadi-mirza
+  GitHub:     https://github.com/hadibaig
+  Credly:     https://www.credly.com/users/hadimirza
+
+  Brand:      HS3Dev
+════════════════════════════════════════
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>ButtonCraft Generator</title>
+
+    <!-- Bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold"
+                href="#">
+
+                <i class="bi bi-vector-pen"></i>
+                ButtonCraft
+
+            </a>
+
+            <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainMenu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse"
+                id="mainMenu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="#home">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="#library">Button Library</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="#generator">Generator</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="#usage">Usage Guide</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section id="home"
+        class="hero-section">
+
+        <div class="container text-center">
+
+            <h1>
+                Create Professional Buttons
+                Without Coding
+            </h1>
+
+            <p>
+                Build beautiful buttons visually,
+                customize every detail,
+                add animations,
+                and export ready-to-use HTML & CSS code.
+            </p>
+
+            <a href="#generator"
+                class="btn btn-primary btn-lg">
+
+                Start Creating
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         BUTTON TYPES
+    ========================= -->
+
+    <section id="library" class="py-5">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Button Types & Use Cases</h2>
+
+            <p>
+                Click any style below to load it into the Button Generator.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h4>Primary Button</h4>
+                    <p>Main call-to-action button.</p>
+                    <button class="btn btn-success w-100"
+                        onclick="loadPreset('primary')">
+                        Customize This Style
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h4>Secondary Button</h4>
+                    <p>Supporting actions and navigation.</p>
+                    <button class="btn btn-secondary w-100"
+                        onclick="loadPreset('secondary')">
+                        Customize This Style
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h4>Outline Button</h4>
+                    <p>Minimal clean design.</p>
+                    <button class="btn btn-outline-primary w-100"
+                        onclick="loadPreset('outline')">
+                        Customize This Style
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h4>CTA Button</h4>
+                    <p>Marketing and sales pages.</p>
+                    <button class="btn btn-warning w-100"
+                        onclick="loadPreset('cta')">
+                        Customize This Style
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h4>Neon Button</h4>
+                    <p>Modern SaaS and tech websites.</p>
+                    <button class="btn btn-dark w-100"
+                        onclick="loadPreset('neon')">
+                        Customize This Style
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h4>Glass Button</h4>
+                    <p>Glassmorphism UI style.</p>
+                    <button class="btn btn-light w-100"
+                        onclick="loadPreset('glass')">
+                        Customize This Style
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- =========================
+         BUTTON SHOWCASE
+    ========================= -->
+
+    <section class="showcase-section">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Button Showcase</h2>
+
+            </div>
+
+            <div class="showcase-grid">
+
+    <button class="btn-square"
+        onclick="loadPreset('square')">
+        Learn More
+    </button>
+
+    <button class="btn-rounded"
+        onclick="loadPreset('contact')">
+        Contact Us
+    </button>
+
+    <button class="btn-pill"
+        onclick="loadPreset('cta')">
+        Get Started
+    </button>
+
+    <button class="btn-circle"
+        onclick="loadPreset('circle')">
+        +
+    </button>
+
+    <button class="btn-gradient"
+        onclick="loadPreset('gradient')">
+        Download
+    </button>
+
+    <button class="btn-shadow"
+        onclick="loadPreset('join')">
+        Join Now
+    </button>
+
+    <button class="btn-neon"
+        onclick="loadPreset('neon')">
+        Explore
+    </button>
+
+    <button class="btn-glass"
+        onclick="loadPreset('demo')">
+        View Demo
+    </button>
+
+</div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         BUTTON GENERATOR
+    ========================= -->
+
+    <section id="generator"
+        class="generator-section">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Button Generator</h2>
+
+                <p>
+                    Customize your button and
+                    instantly preview the result.
+                </p>
+                <h4 id="currentPreset">Custom Button</h4>
+                    <p class="generator-note"> Click any button style above to load it into
+the generator for customization.</p>
+            </div>
+
+            <div class="row">
+
+                <!-- LEFT COLUMN -->
+
+                <div class="col-lg-5">
+
+                    <div class="generator-panel">
+
+                        <h4>Customize Button</h4>
+
+                        <label>Button Text</label>
+                        <input type="text"
+                            id="btnText"
+                            value="Buy Now">
+
+                        <label>Link URL <small>(leave empty for a button — add a URL or # to turn it into a clickable link)</small></label>
+                        <input type="text"
+                            id="linkUrl"
+                            placeholder="https://example.com"
+                            value="">
+
+                        <label>Font Size</label>
+                        <input type="range"
+                            id="fontSize"
+                            min="10"
+                            max="40"
+                            value="18">
+
+                        <label>Button Width</label>
+                        <input type="range"
+                            id="btnWidth"
+                            min="100"
+                            max="400"
+                            value="180">
+
+                        <label>Button Height</label>
+                        <input type="range"
+                            id="btnHeight"
+                            min="40"
+                            max="100"
+                            value="55">
+
+                        <label>Background Color</label>
+                        <input type="color"
+                            id="bgColor"
+                            value="#2563eb">
+
+                        <label>Text Color</label>
+                        <input type="color"
+                            id="textColor"
+                            value="#ffffff">
+
+                        <label>Border Width</label>
+                        <input type="range"
+                            id="borderWidth"
+                            min="0"
+                            max="10"
+                            value="0">
+
+                        <label>Border Color</label>
+                        <input type="color"
+                            id="borderColor"
+                            value="#000000">
+
+                        <label>Border Radius</label>
+                        <input type="range"
+                            id="borderRadius"
+                            min="0"
+                            max="50"
+                            value="10">
+
+                        <label>Padding</label>
+                        <input type="range"
+                            id="padding"
+                            min="5"
+                            max="30"
+                            value="15">
+
+                        <label>Hover Background</label>
+                        <input type="color"
+                            id="hoverBg"
+                            value="#1d4ed8">
+
+                        <label>Hover Text Color</label>
+                        <input type="color"
+                            id="hoverText"
+                            value="#ffffff">
+
+                        <label>Animation</label>
+
+                        <select id="animationType">
+
+                            <option value="none">None</option>
+
+                            <option value="pulse">
+                                Pulse
+                            </option>
+
+                            <option value="bounce">
+                                Bounce
+                            </option>
+
+                            <option value="glow">
+                                Glow
+                            </option>
+
+                            <option value="shake">
+                                Shake
+                            </option>
+
+                            <option value="float">
+                                Float
+                            </option>
+
+                            <option value="heartbeat">
+                                Heartbeat
+                            </option>
+
+                        </select>
+
+                        <hr style="border-color:var(--border); margin:25px 0;">
+
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="useGradient">
+                            Use Gradient Background
+                        </label>
+
+                        <label>Gradient Color 1</label>
+                        <input type="color"
+                            id="gradientColor1"
+                            value="#2563eb">
+
+                        <label>Gradient Color 2</label>
+                        <input type="color"
+                            id="gradientColor2"
+                            value="#9333ea">
+
+                        <label>Gradient Angle</label>
+                        <input type="range"
+                            id="gradientAngle"
+                            min="0"
+                            max="360"
+                            value="135">
+
+                        <hr style="border-color:var(--border); margin:25px 0;">
+
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="useShadow">
+                            Add Box Shadow
+                        </label>
+
+                        <label>Shadow X Offset</label>
+                        <input type="range"
+                            id="shadowX"
+                            min="-20"
+                            max="20"
+                            value="0">
+
+                        <label>Shadow Y Offset</label>
+                        <input type="range"
+                            id="shadowY"
+                            min="-20"
+                            max="20"
+                            value="10">
+
+                        <label>Shadow Blur</label>
+                        <input type="range"
+                            id="shadowBlur"
+                            min="0"
+                            max="60"
+                            value="25">
+
+                        <label>Shadow Color</label>
+                        <input type="color"
+                            id="shadowColor"
+                            value="#000000">
+
+                        <label>Shadow Opacity</label>
+                        <input type="range"
+                            id="shadowOpacity"
+                            min="0"
+                            max="100"
+                            value="35">
+
+                        <hr style="border-color:var(--border); margin:25px 0;">
+
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="useIcon">
+                            Add Icon
+                        </label>
+
+                        <label>Built-in Icon</label>
+                        <select id="iconBuiltin">
+
+                            <option value="star">Star</option>
+                            <option value="heart">Heart</option>
+                            <option value="check">Check</option>
+                            <option value="arrow">Arrow</option>
+                            <option value="download">Download</option>
+                            <option value="cart">Cart</option>
+
+                        </select>
+
+                        <label>Or Paste Icon CDN/Image URL <small>(overrides the built-in icon above)</small></label>
+                        <input type="text"
+                            id="iconUrl"
+                            placeholder="https://.../icon.svg">
+
+                        <label>Icon Position</label>
+                        <select id="iconPosition">
+
+                            <option value="left">Left of text</option>
+                            <option value="right">Right of text</option>
+                            <option value="top">Above text</option>
+                            <option value="bottom">Below text</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <!-- RIGHT COLUMN -->
+
+                <div class="col-lg-7">
+                            
+                    <div class="preview-area">
+
+                        <h4>Live Preview</h4>
+
+                    <p class="preview-note">
+
+                            Changes appear instantly as you customize
+                            your button.
+
+                    </p>
+
+                        <div class="browser-mockup">
+
+                            <div class="browser-mockup-bar">
+
+                                <span class="browser-dot browser-dot-red"></span>
+                                <span class="browser-dot browser-dot-yellow"></span>
+                                <span class="browser-dot browser-dot-green"></span>
+
+                                <div class="browser-address-bar"
+                                    id="browserAddressBar">
+
+                                    yourwebsite.com
+
+                                </div>
+
+                            </div>
+
+                            <div class="preview-box">
+
+                                <button id="previewButton">
+
+                                    Buy Now
+
+                                </button>
+
+                                <a id="previewLink"
+                                    href="#">
+
+                                    Buy Now
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         GENERATED CODE
+    ========================= -->
+
+    <section class="code-section">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Generated Code</h2>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-6">
+
+                    <h5>HTML</h5>
+
+                    <textarea id="htmlCode"
+                        rows="10"></textarea>
+
+                    <button id="copyHtml"
+                        class="btn btn-success">
+
+                        Copy HTML
+
+                    </button>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <h5>CSS</h5>
+
+                    <textarea id="cssCode"
+                        rows="10"></textarea>
+
+                    <button id="copyCss"
+                        class="btn btn-success">
+
+                        Copy CSS
+
+                    </button>
+
+                </div>
+                <br>
+<div class="export-note">
+
+    <strong>Usage Tip:</strong>
+
+    If your page builder only supports an HTML widget
+    (such as Elementor HTML Widget), paste your CSS
+    between &lt;style&gt;&lt;/style&gt; tags above the HTML code.
+
+    If your platform provides separate HTML, CSS and
+    JavaScript areas (such as WordPress custom code,
+    CodePen, JSFiddle, or custom themes), place each
+    code snippet in its respective section.
+
+</div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         USAGE GUIDE
+    ========================= -->
+
+    <section id="usage">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Usage Guide</h2>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-3">
+                    <div class="info-card">
+                        <h4>Elementor</h4>
+                        <p>
+                            Paste HTML into
+                            HTML widget.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="info-card">
+                        <h4>Gutenberg</h4>
+                        <p>
+                            Use Custom HTML block.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="info-card">
+                        <h4>Classic HTML</h4>
+                        <p>
+                            Paste directly into page.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="info-card">
+                        <h4>Any Website</h4>
+                        <p>
+                            Add CSS to stylesheet.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <h3>ButtonCraft Generator</h3>
+
+        <p class="footer-description">
+            Create custom buttons visually, customize styles,
+            add animations, generate HTML & CSS code instantly,
+            and use them in any website, WordPress page,
+            Elementor widget, or web application.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="mailto:mirzahadi@hotmail.com">
+                Email
+            </a>
+
+            <a href="https://hadi-mirza.com"
+                target="_blank">
+                Portfolio
+            </a>
+
+            <a href="https://www.linkedin.com/in/hadi-mirza"
+                target="_blank">
+                LinkedIn
+            </a>
+
+            <a href="https://github.com/hadibaig"
+                target="_blank">
+                GitHub
+            </a>
+
+            <a href="https://www.credly.com/users/hadimirza"
+                target="_blank">
+                Credly
+            </a>
+
+        </div>
+
+        <div class="developer-credit">
+
+            <h5>Mirza Hadi</h5>
+
+            <p>
+                Full Stack Developer &
+                Technical Problem Solver
+            </p>
+
+            <p class="powered">
+                Powered by HS3Dev
+            </p>
+
+        </div>
+
+        <hr>
+
+        <p class="copyright-text">
+            © 2026 ButtonCraft Generator.
+            Designed & Developed by Mirza Hadi.
+        </p>
+
+    </div>
+
+</footer>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
