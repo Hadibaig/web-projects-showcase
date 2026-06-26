@@ -39,6 +39,7 @@ Full-Stack WordPress Developer & Technical Problem Solver
 | 10 | [prime-estate-realty](./prime-estate-realty/) | Prime Estate Realty|[prime-estate-realty](./prime-estate-realty/)  |
 | 11 | [securePass-generator](./securePass-generator/) | Secure Password Generator|[securePass-generator](./securePass-generator/)  |
 | 12 | [buttoncraft-generator](./buttoncraft-generator/) | ButtobCraft Generator|[buttoncraft-generator](./buttoncraft-generator/)  |
+| 13 | [buttoncraft-generator-v2-1-0](./buttoncraft-generator-v2-1-0/) | ButtobCraft Generator V2.1.0|[buttoncraft-generator-v2-1-0](./buttoncraft-generator-v2-1-0/)  |
 
 
 *Projects added weekly — follow to stay updated*
