@@ -40,6 +40,7 @@ Full-Stack WordPress Developer & Technical Problem Solver
 | 11 | [securePass-generator](./securePass-generator/) | Secure Password Generator|[securePass-generator](./securePass-generator/)  |
 | 12 | [buttoncraft-generator](./buttoncraft-generator/) | ButtobCraft Generator|[buttoncraft-generator](./buttoncraft-generator/)  |
 | 13 | [buttoncraft-generator-v2-1-0](./buttoncraft-generator-v2-1-0/) | ButtobCraft Generator V2.1.0|[buttoncraft-generator-v2-1-0](./buttoncraft-generator-v2-1-0/)  |
+| 14 | [geoscope-content-analyzer](./geoscope-content-analyzer/) | Geoscope Content Analyzer|[geoscope-content-analyzer](./geoscope-content-analyzer/)  |
 
 
 *Projects added weekly — follow to stay updated*
