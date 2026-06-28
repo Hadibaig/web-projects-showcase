@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GEOscope Content Analyzer — SEO, AI SEO/GEO &amp; Word Count</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="header-row">
+  <header class="app-header" style="padding:0;">
+    <h1>GEOscope Content Analyzer</h1>
+    <p class="subtitle">Traditional SEO + AI SEO/GEO + Word Count — all in one place</p>
+  </header>
+  <button id="themeToggle" class="theme-toggle">🌙 Dark mode</button>
+</div>
+
+<div class="intro-banner">
+  <p>
+    <strong>GEOscope</strong> analyzes your content two ways at once: classic <strong>Traditional SEO</strong>
+    (keywords, titles, readability — the Google ranking factors you already know) and
+    <strong>AI SEO / GEO</strong> (Generative Engine Optimization — how easily AI engines like ChatGPT,
+    Gemini, AI Overviews, and Perplexity can extract, quote, and cite your content). Write once, get
+    real-time feedback for both the search engines of today and the AI answer engines of tomorrow —
+    plus a built-in word count tool. Everything runs in your browser; nothing is uploaded anywhere.
+  </p>
+</div>
+
+<nav class="tabs" role="tablist">
+  <button class="tab-btn active" data-tab="seo" role="tab" aria-selected="true">Traditional SEO</button>
+  <button class="tab-btn" data-tab="geo" role="tab" aria-selected="false">AI SEO / GEO</button>
+  <button class="tab-btn" data-tab="wordcount" role="tab" aria-selected="false">Word Count</button>
+</nav>
+
+<main class="layout">
+
+  <!-- LEFT COLUMN: shared inputs (used by all tabs) -->
+  <section class="left-col">
+
+    <div class="card">
+      <label for="focusKeyword">Focus keyword</label>
+      <input type="text" id="focusKeyword" placeholder="e.g. content analysis tool" />
+    </div>
+
+    <div class="card">
+      <label for="seoTitle">SEO title</label>
+      <input type="text" id="seoTitle" placeholder="Page title" />
+
+      <label for="metaDesc">Meta description</label>
+      <input type="text" id="metaDesc" placeholder="Short description shown in search results" />
+
+      <label for="urlSlug">URL slug</label>
+      <input type="text" id="urlSlug" placeholder="/page-slug" />
+    </div>
+
+    <div class="card snippet-preview" id="snippetPreview">
+      <p class="snippet-label">Google snippet preview</p>
+      <p class="snippet-title" id="snippetTitle">Your SEO title goes here</p>
+      <p class="snippet-url" id="snippetUrl">yoursite.com/page-slug</p>
+      <p class="snippet-desc" id="snippetDesc">Your meta description preview will appear here as you type.</p>
+      <p class="snippet-hint" id="snippetHint" style="font-size:11px; color:var(--text-secondary); margin-top:8px;"></p>
+    </div>
+
+    <div class="card content-card">
+      <label>Content</label>
+      <div class="editor-toolbar" id="editorToolbar">
+        <button type="button" class="ed-btn" data-cmd="formatBlock" data-value="H1" title="Heading 1">H1</button>
+        <button type="button" class="ed-btn" data-cmd="formatBlock" data-value="H2" title="Heading 2">H2</button>
+        <button type="button" class="ed-btn" data-cmd="formatBlock" data-value="H3" title="Heading 3">H3</button>
+        <button type="button" class="ed-btn" data-cmd="formatBlock" data-value="H4" title="Heading 4">H4</button>
+        <span class="ed-sep"></span>
+        <button type="button" class="ed-btn" data-cmd="bold" title="Bold"><b>B</b></button>
+        <button type="button" class="ed-btn" data-cmd="italic" title="Italic"><i>I</i></button>
+        <span class="ed-sep"></span>
+        <button type="button" class="ed-btn" data-cmd="insertUnorderedList" title="Bullet list">• List</button>
+        <button type="button" class="ed-btn" data-cmd="insertOrderedList" title="Numbered list">1. List</button>
+        <span class="ed-sep"></span>
+        <button type="button" class="ed-btn" id="insertLinkBtn" title="Insert link">🔗 Link</button>
+        <button type="button" class="ed-btn" data-cmd="formatBlock" data-value="P" title="Paragraph (normal text)">¶</button>
+        <button type="button" class="ed-btn" id="clearFormatBtn" title="Clear formatting">Clear fmt</button>
+      </div>
+      <div id="contentBody" class="editable-content" contenteditable="true" data-placeholder="Paste or write your content here..."></div>
+    </div>
+
+
+    <div class="actions">
+      <button id="clearBtn" class="btn">Clear all</button>
+      <button id="copyReportBtn" class="btn">Copy report</button>
+      <button id="downloadReportBtn" class="btn">Download report</button>
+      <span id="saveStatus" class="save-status"></span>
+    </div>
+
+  </section>
+
+  <!-- RIGHT COLUMN: per-tab analysis output -->
+  <section class="right-col">
+
+    <div class="tab-panel active" id="panel-seo">
+      <p class="placeholder">SEO analysis will appear here (Chunk 3 &amp; 4).</p>
+    </div>
+
+    <div class="tab-panel" id="panel-geo">
+      <p class="placeholder">AI SEO / GEO analysis will appear here (Chunk 5).</p>
+    </div>
+
+    <div class="tab-panel" id="panel-wordcount">
+      <p class="placeholder">Word count stats will appear here (Chunk 2).</p>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer class="footer">
+    <div class="container">
+        <h3>GEOscope Content Analyzer</h3>
+        <p class="footer-description">
+            Real-time content analysis for Traditional SEO, AI SEO/GEO,
+            and word count — free, static, and runs entirely in your
+            browser. No backend, no tracking, no data ever leaves your device.
+        </p>
+        <div class="footer-links">
+            <a href="mailto:mirzahadi@hotmail.com">
+                Email
+            </a>
+            <a href="https://hadi-mirza.com"
+                target="_blank">
+                Portfolio
+            </a>
+            <a href="https://www.linkedin.com/in/hadi-mirza"
+                target="_blank">
+                LinkedIn
+            </a>
+            <a href="https://github.com/hadibaig"
+                target="_blank">
+                GitHub
+            </a>
+            <a href="https://www.credly.com/users/hadimirza"
+                target="_blank">
+                Credly
+            </a>
+        </div>
+        <div class="developer-credit">
+            <h5>Mirza Hadi</h5>
+            <p>
+                Full Stack Developer &
+                Technical Problem Solver
+            </p>
+            <p class="powered">
+                Powered by HS3Dev
+            </p>
+        </div>
+        <hr>
+        <p class="copyright-text">
+            © 2026 GEOscope Content Analyzer.
+            Designed & Developed by Mirza Hadi.
+        </p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/editor.js"></script>
+<script src="js/textUtils.js"></script>
+<script src="js/readability.js"></script>
+<script src="js/seoChecks.js"></script>
+<script src="js/geoChecks.js"></script>
+<script src="js/wordCount.js"></script>
+<script src="js/export.js"></script>
+</body>
+</html>
