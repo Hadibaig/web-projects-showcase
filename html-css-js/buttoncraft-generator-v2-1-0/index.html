@@ -325,27 +325,49 @@ the generator for customization.</p>
                             id="btnText"
                             value="Buy Now">
 
-                        <label>Link URL <small>(leave empty for a button — add a URL or # to turn it into a clickable link)</small></label>
+                        <label>Element Type</label>
+                        <select id="elementType">
+
+                            <option value="button">
+                                Button (&lt;button&gt;)
+                            </option>
+
+                            <option value="link">
+                                Link (&lt;a&gt;)
+                            </option>
+
+                        </select>
+
+                        <label>Link URL <small>(used when Element Type is Link)</small></label>
                         <input type="text"
                             id="linkUrl"
                             placeholder="https://example.com"
-                            value="">
+                            value="#">
 
-                        <label>Font Size</label>
+                        <label class="range-label">
+                            <span>Font Size</span>
+                            <span id="fontSizeValue" class="range-value">18px</span>
+                        </label>
                         <input type="range"
                             id="fontSize"
                             min="10"
                             max="40"
                             value="18">
 
-                        <label>Button Width</label>
+                        <label class="range-label">
+                            <span>Button Width</span>
+                            <span id="btnWidthValue" class="range-value">180px</span>
+                        </label>
                         <input type="range"
                             id="btnWidth"
                             min="100"
                             max="400"
                             value="180">
 
-                        <label>Button Height</label>
+                        <label class="range-label">
+                            <span>Button Height</span>
+                            <span id="btnHeightValue" class="range-value">55px</span>
+                        </label>
                         <input type="range"
                             id="btnHeight"
                             min="40"
@@ -362,7 +384,10 @@ the generator for customization.</p>
                             id="textColor"
                             value="#ffffff">
 
-                        <label>Border Width</label>
+                        <label class="range-label">
+                            <span>Border Width</span>
+                            <span id="borderWidthValue" class="range-value">0px</span>
+                        </label>
                         <input type="range"
                             id="borderWidth"
                             min="0"
@@ -374,14 +399,20 @@ the generator for customization.</p>
                             id="borderColor"
                             value="#000000">
 
-                        <label>Border Radius</label>
+                        <label class="range-label">
+                            <span>Border Radius</span>
+                            <span id="borderRadiusValue" class="range-value">10px</span>
+                        </label>
                         <input type="range"
                             id="borderRadius"
                             min="0"
                             max="50"
                             value="10">
 
-                        <label>Padding</label>
+                        <label class="range-label">
+                            <span>Padding</span>
+                            <span id="paddingValue" class="range-value">15px</span>
+                        </label>
                         <input type="range"
                             id="padding"
                             min="5"
@@ -447,7 +478,10 @@ the generator for customization.</p>
                             id="gradientColor2"
                             value="#9333ea">
 
-                        <label>Gradient Angle</label>
+                        <label class="range-label">
+                            <span>Gradient Angle</span>
+                            <span id="gradientAngleValue" class="range-value">135&deg;</span>
+                        </label>
                         <input type="range"
                             id="gradientAngle"
                             min="0"
@@ -461,21 +495,30 @@ the generator for customization.</p>
                             Add Box Shadow
                         </label>
 
-                        <label>Shadow X Offset</label>
+                        <label class="range-label">
+                            <span>Shadow X Offset</span>
+                            <span id="shadowXValue" class="range-value">0px</span>
+                        </label>
                         <input type="range"
                             id="shadowX"
                             min="-20"
                             max="20"
                             value="0">
 
-                        <label>Shadow Y Offset</label>
+                        <label class="range-label">
+                            <span>Shadow Y Offset</span>
+                            <span id="shadowYValue" class="range-value">10px</span>
+                        </label>
                         <input type="range"
                             id="shadowY"
                             min="-20"
                             max="20"
                             value="10">
 
-                        <label>Shadow Blur</label>
+                        <label class="range-label">
+                            <span>Shadow Blur</span>
+                            <span id="shadowBlurValue" class="range-value">25px</span>
+                        </label>
                         <input type="range"
                             id="shadowBlur"
                             min="0"
@@ -487,7 +530,10 @@ the generator for customization.</p>
                             id="shadowColor"
                             value="#000000">
 
-                        <label>Shadow Opacity</label>
+                        <label class="range-label">
+                            <span>Shadow Opacity</span>
+                            <span id="shadowOpacityValue" class="range-value">35%</span>
+                        </label>
                         <input type="range"
                             id="shadowOpacity"
                             min="0"

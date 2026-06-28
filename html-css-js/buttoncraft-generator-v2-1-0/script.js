@@ -54,6 +54,9 @@ document.getElementById("htmlCode");
 const cssCode =
 document.getElementById("cssCode");
 
+const elementType =
+document.getElementById("elementType");
+
 const linkUrl =
 document.getElementById("linkUrl");
 
@@ -104,6 +107,82 @@ document.getElementById("shadowColor");
 
 const shadowOpacity =
 document.getElementById("shadowOpacity");
+
+/* =========================
+   LIVE VALUE DISPLAYS
+   (so the dev can see the exact
+   number while dragging a slider,
+   not just the bar position)
+========================= */
+
+const fontSizeValue =
+document.getElementById("fontSizeValue");
+
+const btnWidthValue =
+document.getElementById("btnWidthValue");
+
+const btnHeightValue =
+document.getElementById("btnHeightValue");
+
+const borderWidthValue =
+document.getElementById("borderWidthValue");
+
+const borderRadiusValue =
+document.getElementById("borderRadiusValue");
+
+const paddingValue =
+document.getElementById("paddingValue");
+
+const gradientAngleValue =
+document.getElementById("gradientAngleValue");
+
+const shadowXValue =
+document.getElementById("shadowXValue");
+
+const shadowYValue =
+document.getElementById("shadowYValue");
+
+const shadowBlurValue =
+document.getElementById("shadowBlurValue");
+
+const shadowOpacityValue =
+document.getElementById("shadowOpacityValue");
+
+function updateRangeValueDisplays(){
+
+    fontSizeValue.textContent =
+    fontSize.value + "px";
+
+    btnWidthValue.textContent =
+    btnWidth.value + "px";
+
+    btnHeightValue.textContent =
+    btnHeight.value + "px";
+
+    borderWidthValue.textContent =
+    borderWidth.value + "px";
+
+    borderRadiusValue.textContent =
+    borderRadius.value + "px";
+
+    paddingValue.textContent =
+    padding.value + "px";
+
+    gradientAngleValue.textContent =
+    gradientAngle.value + "\u00B0";
+
+    shadowXValue.textContent =
+    shadowX.value + "px";
+
+    shadowYValue.textContent =
+    shadowY.value + "px";
+
+    shadowBlurValue.textContent =
+    shadowBlur.value + "px";
+
+    shadowOpacityValue.textContent =
+    shadowOpacity.value + "%";
+}
 
 /* =========================
    TOAST
@@ -320,14 +399,18 @@ function getIconCSSBlock(){
 
 /* =========================
    ELEMENT TYPE (button / link)
-   Auto-detected: an empty Link URL
-   field means "button". Typing
-   anything (even just #) means "link".
+   Manual selection via the Element
+   Type dropdown, like v2.
 ========================= */
 
 function isLinkMode(){
 
-    return linkUrl.value.trim() !== "";
+    return elementType.value === "link";
+}
+
+function getLinkHref(){
+
+    return linkUrl.value.trim() || "#";
 }
 
 function getActivePreviewElement(){
@@ -357,10 +440,10 @@ function syncElementTypeVisibility(){
     if(isLinkMode()){
 
         previewLink.href =
-        linkUrl.value.trim();
+        getLinkHref();
 
         browserAddressBar.textContent =
-        linkUrl.value.trim();
+        getLinkHref();
 
     } else {
 
@@ -374,6 +457,8 @@ function syncElementTypeVisibility(){
 ========================= */
 
 function updateButton(){
+
+    updateRangeValueDisplays();
 
     syncElementTypeVisibility();
 
@@ -516,7 +601,7 @@ isLink ? "a" : "button";
 
 const hrefAttr =
 isLink
-? ` href="${linkUrl.value.trim()}"`
+? ` href="${getLinkHref()}"`
 : "";
 
 const iconPositionClass =
@@ -549,49 +634,28 @@ useIcon.checked
 cssCode.value =
 
 `.custom-btn{
-
     display:inline-flex!important;
-
     align-items:center!important;
-
     justify-content:center!important;
-
     gap:8px!important;
-
     text-align:center!important;
-
     text-decoration:none!important;
-
     background:${backgroundValue}!important;
-
     color:${textColor.value}!important;
-
     width:${btnWidth.value}px!important;
-
     height:${btnHeight.value}px!important;
-
     font-size:${fontSize.value}px!important;
-
     padding:${padding.value}px!important;
-
     border:${borderWidth.value}px solid ${borderColor.value}!important;
-
     border-radius:${borderRadius.value}px!important;
-
     box-shadow:${boxShadowValue}!important;
-
     cursor:pointer!important;
-
     transition:all .3s ease;
-
 }
 
 .custom-btn:hover{
-
     background:${hoverBg.value}!important;
-
     color:${hoverText.value}!important;
-
 }
 
 /* Accessibility: visible keyboard focus state
@@ -645,7 +709,7 @@ function generateReactCode(backgroundValue, boxShadowValue, tag){
 
     const hrefAttr =
     tag === "a"
-    ? ' href="' + linkUrl.value.trim() + '"'
+    ? ' href="' + getLinkHref() + '"'
     : "";
 
     const animationDeclaration =
@@ -735,7 +799,7 @@ function generateTailwindCode(tag){
 
     const hrefAttr =
     tag === "a"
-    ? ' href="' + linkUrl.value.trim() + '"'
+    ? ' href="' + getLinkHref() + '"'
     : "";
 
     const backgroundClass =
@@ -833,6 +897,7 @@ padding,
 hoverBg,
 hoverText,
 animationType,
+elementType,
 linkUrl,
 useGradient,
 gradientColor1,
@@ -856,6 +921,37 @@ iconPosition
         updateButton
     );
 
+});
+
+/* =========================
+   LIVE HOVER PREVIEW
+   Mouse hover (and keyboard focus,
+   so it's visible without a mouse too)
+   swaps in the hover colors, exactly
+   like the real :hover rule would.
+========================= */
+
+function previewHoverOn(el){
+
+    el.style.background =
+    hoverBg.value;
+
+    el.style.color =
+    hoverText.value;
+}
+
+function previewHoverOff(){
+
+    updateButton();
+}
+
+[previewButton, previewLink].forEach(el => {
+
+    el.addEventListener("mouseenter", () => previewHoverOn(el));
+    el.addEventListener("mouseleave", previewHoverOff);
+
+    el.addEventListener("focus", () => previewHoverOn(el));
+    el.addEventListener("blur", previewHoverOff);
 });
 
 /* =========================
@@ -980,7 +1076,9 @@ hoverText.value = "#ffffff";
 
 animationType.value = "none";
 
-linkUrl.value = "";
+elementType.value = "button";
+
+linkUrl.value = "#";
 
 useGradient.checked = false;
 
@@ -1148,7 +1246,9 @@ document
 ========================= */
 function loadPreset(type){
 
-    linkUrl.value = "";
+    elementType.value = "button";
+
+    linkUrl.value = "#";
 
     useGradient.checked = false;
 

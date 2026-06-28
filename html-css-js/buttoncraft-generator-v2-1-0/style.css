@@ -398,6 +398,26 @@ section{
     font-weight:600;
 }
 
+.generator-panel label.range-label{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:baseline;
+}
+
+.range-value{
+
+    font-family:"Courier New",monospace;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    color:var(--secondary);
+}
+
 .preview-area{
 
     position: sticky;
