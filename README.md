@@ -35,7 +35,13 @@ for international clients.
 | [Full Stack Projects](./fullstack-projects/) | React, Node.js, Docker | 🔜 July 2026 |
 
 ---
+## 🗂️ App Development Projects
 
+| # | Project | Description | Live Demo |
+|---|---------|-------------|-----------|
+| 01 | [Geoscope-Content-Analyzer](./apps-development/geoscope-content-analyzer/) | Simple Login Form | [Geoscope-Content-Analyzer](./apps-development/geoscope-content-analyzer/)
+
+---
 ## 🗂️ HTML CSS JS Projects
 
 | # | Project | Description | Live Demo |
@@ -54,6 +60,7 @@ for international clients.
 | 12 | [buttoncraft-generator](./html-css-js/buttoncraft-generator/) | ButtonCraft Generator|[buttoncraft-generator](./html-css-js/buttoncraft-generator/)  |
 | 13 | [buttoncraft-generator-v2-1-0](./html-css-js/buttoncraft-generator-v2-1-0/) | ButtonCraft Generator V2.1.0|[buttoncraft-generator-v2-1-0](./html-css-js/buttoncraft-generator-v2-1-0/)  |
 | 13 | [geoscope-content-analyzer](./html-css-js/geoscope-content-analyzer/) | Geoscope Content Analyzer|[geoscope-content-analyzer](./html-css-js/geoscope-content-analyzer/)  |
+
 
 *More projects added weekly*
 
