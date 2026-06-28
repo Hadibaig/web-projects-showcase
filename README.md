@@ -59,7 +59,7 @@ for international clients.
 | 11 | [securePass-generator](./html-css-js/securePass-generator/) | Secure Password Generator|[securePass-generator](./html-css-js/securePass-generator/)  |
 | 12 | [buttoncraft-generator](./html-css-js/buttoncraft-generator/) | ButtonCraft Generator|[buttoncraft-generator](./html-css-js/buttoncraft-generator/)  |
 | 13 | [buttoncraft-generator-v2-1-0](./html-css-js/buttoncraft-generator-v2-1-0/) | ButtonCraft Generator V2.1.0|[buttoncraft-generator-v2-1-0](./html-css-js/buttoncraft-generator-v2-1-0/)  |
-| 13 | [geoscope-content-analyzer](./html-css-js/geoscope-content-analyzer/) | Geoscope Content Analyzer|[geoscope-content-analyzer](./html-css-js/geoscope-content-analyzer/)  |
+
 
 
 *More projects added weekly*
