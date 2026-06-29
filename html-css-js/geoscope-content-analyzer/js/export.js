@@ -38,13 +38,13 @@
     }
 
     if (results.seo) {
-      lines.push(`-- TRADITIONAL SEO -- Score: ${SCORE_LABEL[results.seo.score]}`);
+      lines.push(`-- TRADITIONAL SEO -- Score: ${SCORE_LABEL[results.seo.score]} (${results.seo.percentage}%)`);
       results.seo.checks.forEach((c) => lines.push(`${STATUS_PREFIX[c.status]} ${c.text}`));
       lines.push("");
     }
 
     if (results.geo) {
-      lines.push(`-- AI SEO / GEO -- Score: ${SCORE_LABEL[results.geo.score]}`);
+      lines.push(`-- AI SEO / GEO -- Score: ${SCORE_LABEL[results.geo.score]} (${results.geo.percentage}%)`);
       results.geo.checks.forEach((c) => lines.push(`${STATUS_PREFIX[c.status]} ${c.text}`));
       lines.push("");
     }

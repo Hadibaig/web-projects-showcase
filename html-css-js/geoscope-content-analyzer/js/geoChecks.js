@@ -21,8 +21,9 @@
 
     if (!content.trim()) {
       return {
-        checks: [{ status: "ok", text: "Add some content above to run the AI/GEO analysis." }],
+        checks: [{ status: "ok", weight: 0, text: "Add some content above to run the AI/GEO analysis." }],
         score: "ok",
+        percentage: 0,
       };
     }
 
@@ -35,68 +36,68 @@
     const hasDefinition = DEFINITION_PATTERNS.some((p) => firstTwo.includes(p));
     const firstSentenceWordCount = TextUtils.getWordCount(sentences[0] || "");
     if (hasDefinition) {
-      checks.push({ status: "good", text: "A clear definition-style sentence appears near the top — good for AI extraction." });
+      checks.push({ status: "good", weight: 3, text: "A clear definition-style sentence appears near the top — good for AI extraction." });
     } else if (firstSentenceWordCount > 0 && firstSentenceWordCount <= 30) {
-      checks.push({ status: "ok", text: "Opening sentence is short, but doesn't clearly define or answer the topic. Consider starting with a direct answer." });
+      checks.push({ status: "ok", weight: 3, text: "Opening sentence is short, but doesn't clearly define or answer the topic. Consider starting with a direct answer." });
     } else {
-      checks.push({ status: "bad", text: "No clear direct-answer sentence detected in the first two sentences. AI engines favor content that answers the main question immediately." });
+      checks.push({ status: "bad", weight: 3, text: "No clear direct-answer sentence detected in the first two sentences. AI engines favor content that answers the main question immediately." });
     }
 
     // 2. Question-style headings
     if (headings.length === 0) {
-      checks.push({ status: "ok", text: "No subheadings found. Question-style H2/H3s (e.g. \"What is...\", \"How does...\") help match AI/voice search queries." });
+      checks.push({ status: "ok", weight: 2, text: "No subheadings found. Question-style H2/H3s (e.g. \"What is...\", \"How does...\") help match AI/voice search queries." });
     } else {
       const questionHeadings = headings.filter((h) =>
         QUESTION_STARTERS.some((q) => normalize(h.text).startsWith(q))
       );
       if (questionHeadings.length > 0) {
-        checks.push({ status: "good", text: `${questionHeadings.length} of ${headings.length} subheading(s) are phrased as questions — great for matching AI/voice queries.` });
+        checks.push({ status: "good", weight: 2, text: `${questionHeadings.length} of ${headings.length} subheading(s) are phrased as questions — great for matching AI/voice queries.` });
       } else {
-        checks.push({ status: "ok", text: "None of your subheadings are phrased as questions. Consider rewriting one as a question (e.g. \"What is...?\")." });
+        checks.push({ status: "ok", weight: 2, text: "None of your subheadings are phrased as questions. Consider rewriting one as a question (e.g. \"What is...?\")." });
       }
     }
 
     // 3. Lists or tables present
     if (TextUtils.hasListOrTableHtml(contentHtml)) {
-      checks.push({ status: "good", text: "Content includes a list or table — these are easy for AI engines to extract and quote." });
+      checks.push({ status: "good", weight: 2, text: "Content includes a list or table — these are easy for AI engines to extract and quote." });
     } else {
-      checks.push({ status: "bad", text: "No bullet lists, numbered lists, or tables found. Use the toolbar's list buttons to add structured content — AI engines are more likely to cite it." });
+      checks.push({ status: "bad", weight: 2, text: "No bullet lists, numbered lists, or tables found. Use the toolbar's list buttons to add structured content — AI engines are more likely to cite it." });
     }
 
     // 4. Numeric / statistical specificity
     const numberMatches = content.match(/\b\d+(\.\d+)?%?\b/g) || [];
     if (numberMatches.length >= 3) {
-      checks.push({ status: "good", text: `Content includes ${numberMatches.length} specific numbers/statistics — concrete data is more citable.` });
+      checks.push({ status: "good", weight: 1, text: `Content includes ${numberMatches.length} specific numbers/statistics — concrete data is more citable.` });
     } else if (numberMatches.length > 0) {
-      checks.push({ status: "ok", text: "A few numbers are present, but consider adding more concrete data or statistics." });
+      checks.push({ status: "ok", weight: 1, text: "A few numbers are present, but consider adding more concrete data or statistics." });
     } else {
-      checks.push({ status: "bad", text: "No specific numbers or statistics found. Concrete data tends to be favored by AI answer engines." });
+      checks.push({ status: "bad", weight: 1, text: "No specific numbers or statistics found. Concrete data tends to be favored by AI answer engines." });
     }
 
     // 5. Source / citation presence
     const links = TextUtils.getLinksFromHtml(contentHtml);
     if (links.length > 0) {
-      checks.push({ status: "good", text: `Found ${links.length} external link(s)/citation(s) — referencing sources boosts perceived authority.` });
+      checks.push({ status: "good", weight: 2, text: `Found ${links.length} external link(s)/citation(s) — referencing sources boosts perceived authority.` });
     } else {
-      checks.push({ status: "bad", text: "No external links or cited sources detected. Use the toolbar's link button to cite credible sources — this improves trust signals for AI engines." });
+      checks.push({ status: "bad", weight: 2, text: "No external links or cited sources detected. Use the toolbar's link button to cite credible sources — this improves trust signals for AI engines." });
     }
 
     // 6. Summary / TL;DR block
     const lowerContent = content.toLowerCase();
     const hasSummary = SUMMARY_KEYWORDS.some((kw) => lowerContent.includes(kw));
     if (hasSummary) {
-      checks.push({ status: "good", text: "A summary or TL;DR block was found — ideal for AI engines to snapshot." });
+      checks.push({ status: "good", weight: 1, text: "A summary or TL;DR block was found — ideal for AI engines to snapshot." });
     } else {
-      checks.push({ status: "ok", text: "No summary or TL;DR block detected. Adding one near the top or bottom can help AI engines quickly grasp your key point." });
+      checks.push({ status: "ok", weight: 1, text: "No summary or TL;DR block detected. Adding one near the top or bottom can help AI engines quickly grasp your key point." });
     }
 
     // 7. Freshness signal (date mention)
     const hasYear = /\b20\d{2}\b/.test(content);
     const hasMonth = MONTHS.some((m) => lowerContent.includes(m));
     if (hasYear || hasMonth) {
-      checks.push({ status: "good", text: "A date or year is mentioned — recency signals matter to AI Overviews and AI search engines." });
+      checks.push({ status: "good", weight: 1, text: "A date or year is mentioned — recency signals matter to AI Overviews and AI search engines." });
     } else {
-      checks.push({ status: "ok", text: "No date or year mentioned. Consider noting when this content was published or last updated." });
+      checks.push({ status: "ok", weight: 1, text: "No date or year mentioned. Consider noting when this content was published or last updated." });
     }
 
     // 8. Answer completeness per heading (heading followed by a short direct paragraph)
@@ -104,15 +105,16 @@
       const ratio = estimateHeadingAnswerRatio(sections);
       const pct = Math.round(ratio * 100);
       if (pct >= 70) {
-        checks.push({ status: "good", text: `${pct}% of subheadings are followed by a concise paragraph — good for AI extraction.` });
+        checks.push({ status: "good", weight: 2, text: `${pct}% of subheadings are followed by a concise paragraph — good for AI extraction.` });
       } else if (pct >= 40) {
-        checks.push({ status: "ok", text: `Only ${pct}% of subheadings are followed by a concise, direct paragraph. Try answering each heading briefly before elaborating.` });
+        checks.push({ status: "ok", weight: 2, text: `Only ${pct}% of subheadings are followed by a concise, direct paragraph. Try answering each heading briefly before elaborating.` });
       } else {
-        checks.push({ status: "bad", text: `Most subheadings aren't followed by a short, direct paragraph. AI engines tend to extract the first sentence after a heading.` });
+        checks.push({ status: "bad", weight: 2, text: `Most subheadings aren't followed by a short, direct paragraph. AI engines tend to extract the first sentence after a heading.` });
       }
     }
 
-    return { checks, score: computeScore(checks) };
+    const scoreResult = computeScore(checks);
+    return { checks, score: scoreResult.band, percentage: scoreResult.percentage };
   }
 
   function normalize(str) {
@@ -135,12 +137,27 @@
     return goodCount / sections.length;
   }
 
+  // Same weighted, percentage-based scoring as seoChecks.js — see that file
+  // for the full rationale. "good" = full weight, "ok" = half, "bad" = none.
   function computeScore(checks) {
-    const badCount = checks.filter((c) => c.status === "bad").length;
-    const okCount = checks.filter((c) => c.status === "ok").length;
-    if (badCount >= 3) return "bad";
-    if (badCount > 0 || okCount > 2) return "ok";
-    return "good";
+    let totalWeight = 0;
+    let earnedWeight = 0;
+
+    checks.forEach((c) => {
+      const w = c.weight === undefined ? 1 : c.weight;
+      totalWeight += w;
+      if (c.status === "good") earnedWeight += w;
+      else if (c.status === "ok") earnedWeight += w * 0.5;
+    });
+
+    const percentage = totalWeight > 0 ? Math.round((earnedWeight / totalWeight) * 100) : 100;
+
+    let band;
+    if (percentage >= 80) band = "good";
+    else if (percentage >= 50) band = "ok";
+    else band = "bad";
+
+    return { percentage, band };
   }
 
   const scoreLabel = { good: "Good", ok: "Needs work", bad: "Poor" };
@@ -167,7 +184,7 @@
       <div class="score-grid">
         <div class="score-card">
           <p class="score-label">AI visibility score</p>
-          <p class="score-value ${scoreClass[result.score]}">${scoreLabel[result.score]}</p>
+          <p class="score-value ${scoreClass[result.score]}">${scoreLabel[result.score]} (${result.percentage}%)</p>
         </div>
         <div class="score-card">
           <p class="score-label">Checks run</p>
